@@ -22,28 +22,30 @@
     <i ng-click="languageFilter = {}" class="fa fa-code main-lang-logos" aria-hidden="true"></i>
   </div>
 
-  <div> <!--sortby button -->
-  <a href="#" ng-click ="sortType = 'dislikes - likes'; sortReverse = !sortReverse">
-  By Votes
-  <span ng-show="sortType == 'dislikes - likes' && !sortReverse" class="fa fa-caret-down"></span>
-  <!-- <span ng-show="sortType == 'dislikes - likes' && sortReverse" class="fa fa-caret-up"></span> -->
-  ||
-  </a>
+  <div style="display:block; text-align:center; border:thin solid #999; width:30%; margin:0 auto; padding:.5em;"> <!--sortby button -->
 
-  <a href="#" ng-click="sortType = 'date_added'; sortReverse = !sortReverse">
-  Date Added
-  <span ng-show="sortType == 'date_added' && !sortReverse" class="fa fa-caret-down"></span>
-  <!-- <span ng-show="sortType == 'date_added' && sortReverse" class="fa fa-caret-up"></span> -->
-  ||
-  </a>
+    <a href="#" ng-click="sortType = 'date_added'; sortReverse = !sortReverse">
+    Date Added
+    <span ng-show="sortType == 'date_added' && !sortReverse" class="fa fa-caret-down"></span>
+    <!-- <span ng-show="sortType == 'date_added' && sortReverse" class="fa fa-caret-up"></span> -->
+    ||
+    </a>
 
-  <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
-  Type
-  <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
-  <!-- <span ng-show="sortType == type' && sortReverse" class="fa fa-caret-up"></span> -->
-  ||
-  </a>
-  <div>
+    <a href="#" ng-click ="sortType = 'dislikes - likes'; sortReverse = !sortReverse">
+    By Votes
+    <span ng-show="sortType == 'dislikes - likes' && !sortReverse" class="fa fa-caret-down"></span>
+    <!-- <span ng-show="sortType == 'dislikes - likes' && sortReverse" class="fa fa-caret-up"></span> -->
+    ||
+    </a>
+
+    <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+    Type
+    <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
+    <!-- <span ng-show="sortType == type' && sortReverse" class="fa fa-caret-up"></span> -->
+    ||
+    </a>
+  
+  </div>
 
   <div class="search_container"><input type="text" id="search_input" placeholder="Search Resources" ng-model="search" /><i class="fa fa-search fa-2x" aria-hidden="true"></i></div>
 
