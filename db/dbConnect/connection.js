@@ -1,24 +1,20 @@
 'use strict';
 
 const mysql = require('mysql');
-let dbCon;
-
-if(process.env && process.env.CLEARDB_DATABASE_URL){
-  dbCon = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
-} else {
-  dbCon = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123',
-    database: 'NList'
-  });
-}
+const auth = require('./pw.js');
+const dbCon = mysql.createConnection({
+  host: 'nlist.cfajvtv3d5ui.us-west-2.rds.amazonaws.com',
+  user: 'root',
+  password: auth.password,
+  database: 'NList',
+  port: 3306
+});
 
 dbCon.connect(function(err) {
   if (err) {
-    console.log('error did not connect to rezzy CHECK YO self')
+    console.log(err);
   }
-  console.log('Connected to NList database BIG THIngs are COMING');
+  console.log('Connected to NList database BIG Things are COMING');
 });
 
 module.exports = dbCon;
