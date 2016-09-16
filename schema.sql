@@ -131,6 +131,9 @@ CREATE TABLE `sub_topic` (
 
 ALTER TABLE `resources` ADD FOREIGN KEY (id_languages) REFERENCES `languages` (`id`);
 ALTER TABLE `resources` ADD FOREIGN KEY (id_resource_type) REFERENCES `resource_type` (`id`);
+
+ALTER TABLE `comments` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
+ALTER TABLE `comments` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 -- ALTER TABLE `resources` ADD FOREIGN KEY (id_sub_topic) REFERENCES `sub_topic` (`id`);
 ALTER TABLE `user_voted` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 ALTER TABLE `user_voted` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
