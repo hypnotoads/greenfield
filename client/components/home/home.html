@@ -70,8 +70,9 @@
         <div class="resource_desc">{{post.keywords}}</div><!-- This is the description -->
       </a>
       <div class="like_dislike">
-          <div class="resource_likes" ng-click="incrementLike(post)">{{post.likes}} <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
-          <div class="resource_dislikes" ng-click="incrementDislike(post)">{{post.dislikes}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
+          <div class="resource" ng-click="incrementLike(post)"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
+          <div class="resource" ng-click="incrementDislike(post)"> <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
+          <div class="resource">{{ post.likes - post.dislikes > 0 ? post.likes - post.dislikes : 0 }}</div>
       </div>
     </div>
   </div>

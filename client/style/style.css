@@ -100,9 +100,11 @@ footer ul .copyright{
   text-align:center;
   padding:1em 0em;
 }
+
 .verification_logo{
   width:125px;
 }
+
 .verification_container{
   display:block;
   width:50%;
@@ -190,7 +192,6 @@ footer ul .copyright{
   cursor: pointer;
 }
 
-
 .appHeaderNav{
   padding: 0em 1em;
   margin: 0 auto;
@@ -207,6 +208,7 @@ footer ul .copyright{
 .topbar_logo{
   width: 62.5px;
 }
+
 .rezzy_button a{
     margin: 1em;
     padding:.5em 1em;
@@ -216,50 +218,51 @@ footer ul .copyright{
     border: thin solid rgba(232,167,58, 1);
 }
 
-  .rezzy_button a:hover{
-    transition: background-color .2s;
-    color:#fff !important;
-    background-color: rgba(222,160,55, 1);
-    text-shadow: -.03em .03em #27496d;
-  }
+.rezzy_button a:hover{
+  transition: background-color .2s;
+  color:#fff !important;
+  background-color: rgba(222,160,55, 1);
+  text-shadow: -.03em .03em #27496d;
+}
 
-  .rezzy_button a:active {
-    transition: background-color .2s;
-    color:#fff !important;
-    background-color: rgba(212,153,52, 1);
-    text-shadow: -.01em .01em #193047;
-  }
-
+.rezzy_button a:active {
+  transition: background-color .2s;
+  color:#fff !important;
+  background-color: rgba(212,153,52, 1);
+  text-shadow: -.01em .01em #193047;
+}
 
 .entryButtons{
   float: right !important;
 }
-  .entryButtons a{
-    margin: 1em;
-    padding:.5em 1em;
-    border-radius:.2em;
-    outline:none;
-    color: #fff;
-    border: .2em solid rgba(30,170,186, 1);
-  }
 
-  .entryButtons a:hover {
-    transition: background-color .2s;
-    color:#fff !important;
-    background-color: rgba(30,170,186, 1);
-    text-shadow: -.03em .03em #27496d;
-  }
+.entryButtons a{
+  margin: 1em;
+  padding:.5em 1em;
+  border-radius:.2em;
+  outline:none;
+  color: #fff;
+  border: .2em solid rgba(30,170,186, 1);
+}
 
-  .entryButtons a:active {
-    transition: background-color .2s;
-    color:#fff !important;
-    background-color: rgba(27,152,166, 1);
-    text-shadow: -.01em .01em #193047;
-  }
+.entryButtons a:hover {
+  transition: background-color .2s;
+  color:#fff !important;
+  background-color: rgba(30,170,186, 1);
+  text-shadow: -.03em .03em #27496d;
+}
+
+.entryButtons a:active {
+  transition: background-color .2s;
+  color:#fff !important;
+  background-color: rgba(27,152,166, 1);
+  text-shadow: -.01em .01em #193047;
+}
 
 .header_photo{
   width: 5%;
 }
+
 .profileMenu{
   float:right !important;
   position: relative;
@@ -366,6 +369,7 @@ footer ul .copyright{
   clear:both;
   margin:1em 0em 2em 0em;
 }
+
 #search_input {
   display:inline-block;
   position: relative;
@@ -381,6 +385,7 @@ footer ul .copyright{
   font-size:1.1em;
   outline-color: rgba(35,201,219, 1);
 }
+
 .fa-search{
   position:absolute;
   line-height: 3em;
@@ -389,9 +394,10 @@ footer ul .copyright{
   margin:.75em 0em 0em -1.5em;
   color: rgba(35,201,219, 1) !important;
 }
-  .fa-search:hover{
-    cursor: pointer;
-  }
+
+.fa-search:hover{
+  cursor: pointer;
+}
 
 #resource_list_container {
   /* display: block; */
@@ -419,13 +425,13 @@ footer ul .copyright{
   padding: 1em;
 }
 
-  .resource_item:hover {
-    transition: box-shadow .2s;
-    border-radius: .5em;
-    border: solid .2em rgba(32,182,199,.9);
-    box-shadow: .4em .4em .1em rgba(32,182,199,.9);
-    cursor:pointer;
-  }
+.resource_item:hover {
+  transition: box-shadow .2s;
+  border-radius: .5em;
+  border: solid .2em rgba(32,182,199,.9);
+  box-shadow: .4em .4em .1em rgba(32,182,199,.9);
+  cursor:pointer;
+}
 
 .resource_title {
   text-align:left;
@@ -447,12 +453,14 @@ footer ul .copyright{
   background: rgba(112,128,144,1);
   width: 100%;
 }
+
 .resource_type { /* icons */
   margin: .25em;
   font-size:1.5em;
   float:right;
 
 }
+
 .resource_desc {
   font-size: 1.1em;
   padding: 1em 0em 3em .5em;
@@ -460,7 +468,6 @@ footer ul .copyright{
   color: #43464C;
   clear:both;
 }
-
 
 .resource_lang {
   padding: 1em 0em 0em .5em;
@@ -470,36 +477,31 @@ footer ul .copyright{
 .miniCodeLogo{
   font-size:2em;
 }
+
 .like_dislike{
   font-size:1.2em;
   text-align:right;
 }
 
-.resource_likes {
+.resource {
   padding: .25em .25em .25em .5em;
   display:inline;
 }
-  .resource_likes:hover {
-    cursor: pointer;
-  }
 
-
-.resource_dislikes {
-  padding: .25em .25em .25em .5em;
-  display:inline;
+.resource:hover {
+  cursor: pointer;
 }
-  .resource_dislikes:hover {
-    cursor: pointer;
-  }
+
 /**************** PROFILE PAGE RESOURCES DESIGNS SETTINGS *****************/
 .profile_photo_container{
   display: block;
   float:left;
 }
-  .profile_photo{
-    width:250px;
 
-  }
+.profile_photo{
+  width:250px;
+}
+
 .profile_information_container{
   float:left;
   font-size:1.618em;
@@ -508,48 +510,51 @@ footer ul .copyright{
   margin-left:1em;
 
 }
-  .profile_name{
-    margin-bottom:1em;
-  }
-  .profile_email{
-    font-size:.809em;
-  }
+
+.profile_name{
+  margin-bottom:1em;
+}
+
+.profile_email{
+  font-size:.809em;
+}
+
 .profile_language_container{
   clear:both;
   text-align:center;
 
 }
- .profile_language_container h2, .edit_profile_container h2{
-    clear:both;
-    font-size:1.618em;
-    font-weight:600;
-    color:#667;
-    padding:2em 0em 1em 0em;
 
-  }
-
-.edit_profile_button{
-  float:right;
-    text-align: center;
-    background:none;
-    border: thin solid #CCC;
-    border-radius: .2em;
-    color: #667;
-    outline: none;
-    font-size: 1.1em;
-    padding:1em;
-    margin:.5em;
+.profile_language_container h2, .edit_profile_container h2{
+  clear:both;
+  font-size:1.618em;
+  font-weight:600;
+  color:#667;
+  padding:2em 0em 1em 0em;
 
 }
 
+.edit_profile_button{
+  float:right;
+  text-align: center;
+  background:none;
+  border: thin solid #CCC;
+  border-radius: .2em;
+  color: #667;
+  outline: none;
+  font-size: 1.1em;
+  padding:1em;
+  margin:.5em;
+}
+
 .edit_profile_button:hover{
-    transition: color .2s, background-color .2s;
-    text-align: center;
-    color:#FFF;
-    background: rgba(35,201,219, 1);
-    border: thin solid rgba(35,201,219, 1);
-    cursor:pointer;
-  }
+  transition: color .2s, background-color .2s;
+  text-align: center;
+  color:#FFF;
+  background: rgba(35,201,219, 1);
+  border: thin solid rgba(35,201,219, 1);
+  cursor:pointer;
+}
 
 .edit_profile_container{
   margin-top:3em;
@@ -564,7 +569,6 @@ footer ul .copyright{
   max-width:600px;
   text-align:center;
 }
-
 
 .edit_profile_container .input{
   display:block;
@@ -584,119 +588,126 @@ footer ul .copyright{
 }
 
 .submit_profile_button{
-    float:right;
-    text-align: center;
-    background:none;
-    border: thin solid #CCC;
-    border-radius: .2em;
-    color: #667;
-    padding:.5em;
-    outline: none;
-    font-size: 1.2em;
-    width:100%;
-    margin:2em 0em;
-  }
+  float:right;
+  text-align: center;
+  background:none;
+  border: thin solid #CCC;
+  border-radius: .2em;
+  color: #667;
+  padding:.5em;
+  outline: none;
+  font-size: 1.2em;
+  width:100%;
+  margin:2em 0em;
+}
+
 .submit_profile_button:hover{
-    transition: color .2s, background-color .2s;
-    text-align: center;
-    color:#FFF;
-    background: rgba(35,201,219, 1);
-    border: thin solid rgba(35,201,219, 1);
-    cursor:pointer;
-  }
+  transition: color .2s, background-color .2s;
+  text-align: center;
+  color:#FFF;
+  background: rgba(35,201,219, 1);
+  border: thin solid rgba(35,201,219, 1);
+  cursor:pointer;
+}
 
-  /************* ADD RESOURCES PAGE *********************/
-  .add_resource_container{
-    text-align:center;
-    display:block;
-  }
-  #rezzy_guidelines{
-    position:absolute;
-    left:0;
-    top:10%;
-    background:#099;
-  }
-  .rezzy_title{
-    font-size:4em;
-    font-weight:700;
-    background-color: #999;
-    color: transparent;
-    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
-    -webkit-background-clip: text;
-      -moz-background-clip: text;
-            background-clip: text;
-  }
-  .add_resource_form{
-    display:block;
-    margin:2em auto 3em auto;
-    width:50%;
-    min-width:400px;
-    max-width:600px;
-    text-align:center;
-  }
-  .add_resource_container input, select, textarea{
-    font-size:1em;
-    padding:0 .5em;
-    display:block;
-    height:3em;
-    color:#667;
-    width:100%;
-    margin:.5em auto;
-    max-width:70%;
-    text-align:justify;
-    border:thin solid #CCC;
-    outline-color: rgba(35,201,219, 1);
-  }
+/************* ADD RESOURCES PAGE *********************/
+.add_resource_container{
+  text-align:center;
+  display:block;
+}
 
-  .add_resource_container textarea{
-    min-height:9em;
-  }
+#rezzy_guidelines{
+  position:absolute;
+  left:0;
+  top:10%;
+  background:#099;
+}
 
-  .add_resource_container button{
-    float:none;
-    text-align: center;
-    background:none;
-    border: thin solid rgba(35,201,219, 1);
-    border-radius: .2em;
-    color: #667;
-    padding:.5em;
-    outline: none;
-    font-size: 1.2em;
-    width:70%;
-    margin:3em;
-  }
-  .add_resource_container button:hover{
-    transition: color .2s, background-color .2s;
-    text-align: center;
-    color:#FFF;
-    background: rgba(35,201,219, 1);
-    border: thin solid rgba(35,201,219, 1);
-    cursor:pointer;
-  }
+.rezzy_title{
+  font-size:4em;
+  font-weight:700;
+  background-color: #999;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+    -moz-background-clip: text;
+          background-clip: text;
+}
 
-  .rules{
-    text-align:justify;
-    margin:0 auto;
-    color:#999;
-    width:70%;
-  }
-  .rules h2{
-    font-weight:700;
-    margin:1em 0em;;
-  }
-  .rules li{
-    padding:.3em 0em;
-    list-style: square;
-  }
+.add_resource_form{
+  display:block;
+  margin:2em auto 3em auto;
+  width:50%;
+  min-width:400px;
+  max-width:600px;
+  text-align:center;
+}
 
-  .successMessage {
-    color:#008000;
-    font-weight: 700;
-    font-size: 2em;
-  }
+.add_resource_container input, select, textarea{
+  font-size:1em;
+  padding:0 .5em;
+  display:block;
+  height:3em;
+  color:#667;
+  width:100%;
+  margin:.5em auto;
+  max-width:70%;
+  text-align:justify;
+  border:thin solid #CCC;
+  outline-color: rgba(35,201,219, 1);
+}
 
+.add_resource_container textarea{
+  min-height:9em;
+}
 
-  /************* ABOUT PAGE *********************/
+.add_resource_container button{
+  float:none;
+  text-align: center;
+  background:none;
+  border: thin solid rgba(35,201,219, 1);
+  border-radius: .2em;
+  color: #667;
+  padding:.5em;
+  outline: none;
+  font-size: 1.2em;
+  width:70%;
+  margin:3em;
+}
+
+.add_resource_container button:hover{
+  transition: color .2s, background-color .2s;
+  text-align: center;
+  color:#FFF;
+  background: rgba(35,201,219, 1);
+  border: thin solid rgba(35,201,219, 1);
+  cursor:pointer;
+}
+
+.rules{
+  text-align:justify;
+  margin:0 auto;
+  color:#999;
+  width:70%;
+}
+
+.rules h2{
+  font-weight:700;
+  margin:1em 0em;;
+}
+
+.rules li{
+  padding:.3em 0em;
+  list-style: square;
+}
+
+.successMessage {
+  color:#008000;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+/************* ABOUT PAGE *********************/
 .about_container {
   text-align: center;
 }
@@ -751,6 +762,7 @@ footer ul .copyright{
   text-align: center;
 
 }
+
 .profile_overlay .team_mate {
     position: absolute;
     border-radius: 50%;
@@ -769,10 +781,12 @@ footer ul .copyright{
   display: -webkit-inline-box;
   display:inline-box;
 }
+
 .profile_overlay:hover .team_mate {
     display: block;
     background: rgba(0, 0, 0, .6);
 }
+
 .hypnotoads:hover > .hypnotoads_description{
   visibility: visible;
   opacity: 1;
@@ -780,6 +794,7 @@ footer ul .copyright{
   display:inline-block;
   vertical-align:top;
 }
+
 .harris:hover > .harris_description{
   visibility: visible;
   opacity: 1;
@@ -787,6 +802,7 @@ footer ul .copyright{
   display:inline-block;
   vertical-align:top;
 }
+
 .daniel:hover > .daniel_description{
   visibility: visible;
   opacity: 1;
