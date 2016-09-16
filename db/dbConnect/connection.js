@@ -1,8 +1,16 @@
 'use strict';
 
 const mysql = require('mysql');
-const auth = require('./pw.js');
-const dbCon = mysql.createConnection({
+const auth = require('./pw.js') || null;
+let dbCon;
+
+if(process.env && process.env.PW){
+  auth.password = process.env.PW;
+} else {
+  console.error('unknown environment, no db password availble');
+}
+
+dbCon = mysql.createConnection({
   host: 'nlist.cfajvtv3d5ui.us-west-2.rds.amazonaws.com',
   user: 'root',
   password: auth.password,
