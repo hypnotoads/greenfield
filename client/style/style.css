@@ -773,6 +773,13 @@ footer ul .copyright{
     display: block;
     background: rgba(0, 0, 0, .6);
 }
+.hypnotoads:hover > .hypnotoads_description{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility .5s, opacity .8s;
+  display:inline-block;
+  vertical-align:top;
+}
 .harris:hover > .harris_description{
   visibility: visible;
   opacity: 1;
@@ -813,7 +820,7 @@ footer ul .copyright{
 }
 
 
-.daniel_description, .harris_description, .kent_description, .michael_description, .neekon_description {
+.hypnotoads_description,.daniel_description, .harris_description, .kent_description, .michael_description, .neekon_description {
   visibility: hidden;
   color: #667 !important;
   opacity:0;
