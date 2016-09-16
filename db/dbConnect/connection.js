@@ -9,7 +9,7 @@ if(process.env && process.env.CLEARDB_DATABASE_URL){
   dbCon = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '123',
     database: 'NList'
   });
 }
