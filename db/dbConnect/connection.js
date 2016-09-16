@@ -8,11 +8,11 @@ const mysql = require('mysql');
 // });
 
 const dbCon = mysql.createConnection({
-  host: 'nlist.cvtsvwvdzejt.us-west-1.rds.amazonaws.com',
-  user: 'Neekon',
-  password: 'NList11.0',
-  database: 'NList',
-  port: 3306
+  host: 'ec2-54-243-203-141.compute-1.amazonaws.com',
+  user: 'potiaydibnuhwv',
+  password: 'UI6U7Qub_90NMi2DlbzcEQswaP',
+  database: 'd32d0l1bj1c3em',
+  port: 5432
 });
 
 dbCon.connect(function(err) {
