@@ -5,7 +5,9 @@ let auth;
 let dbCon;
 
 if(process.env && process.env.PW){
-  auth.password = process.env.PW;
+  auth = {
+    password: process.env.PW
+  };
 } else {
   auth = require('./pw.js');
 }
