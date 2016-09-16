@@ -1,19 +1,16 @@
 const mysql = require('mysql');
+let dbCon;
 
-// const dbCon = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: '',
-//   database: 'NList'
-// });
-
-const dbCon = mysql.createConnection({
-  host: 'ec2-54-243-203-141.compute-1.amazonaws.com',
-  user: 'potiaydibnuhwv',
-  password: 'UI6U7Qub_90NMi2DlbzcEQswaP',
-  database: 'd32d0l1bj1c3em',
-  port: 5432
-});
+if(process.env && process.env.CLEARDB_DATABASE_URL){
+  dbCon = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+} else {
+  dbCon = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'NList'
+  });
+}
 
 dbCon.connect(function(err) {
   if (err) {
