@@ -6,3 +6,6 @@ client/lib
 
 ###PEM###
 NList.pem
+
+###Password###
+db/dbConnect/pw.js
