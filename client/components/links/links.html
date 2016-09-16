@@ -1,20 +1,20 @@
 <div class="add_resource_container"> <!--Add Resources-->
-  <h1 class="rezzy_title">Add A Rezzy</h1>
+  <h1 class="rezzy_title">Add A Resource</h1>
   <form class="add_resource_form" ng-submit="addPost(); successMessage = true">
     <input type="text" name="title", placeholder="Title" ng-model="title" required>
     <br />
     <textarea type="text" name="Description" placeholder="Description" ng-model="description" required></textarea>
     <br />
     <select name="repeatSelect" id="repeatSelect" ng-model="data.type" required>
-      <option value="" disabled>Type of rezzy?</option>
+      <option value="" disabled>Type of resource</option>
       <option ng-repeat="option in data.typeOptions" value="{{option.value}}">{{option.label}}</option>
     </select>
-    <br />  
+    <br />
     <select name="repeatSelect" id="repeatSelect" ng-model="data.name" required>
-      <option value="" diasbled>Which Language?</option>
+      <option value="" diasbled>Select language</option>
       <option ng-repeat="option in data.languageOptions" value="{{option.value}}">{{option.label}}</option>
     </select>
-    <br />    
+    <br />
     <select name="repeatSelect" id="repeatSelect" ng-model="data.topic">
       <option value="" disabled selected>Specified topic? (select none if n/a)</option>
       <option ng-repeat="option in data.topics[data.name]" value="{{option.value}}">{{option.label}}</option>
