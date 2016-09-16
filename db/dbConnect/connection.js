@@ -7,13 +7,7 @@ const mysql = require('mysql');
 //   database: 'NList'
 // });
 
-const dbCon = mysql.createConnection({
-  host: 'ec2-54-243-203-141.compute-1.amazonaws.com',
-  user: 'potiaydibnuhwv',
-  password: 'UI6U7Qub_90NMi2DlbzcEQswaP',
-  database: 'd32d0l1bj1c3em',
-  port: 5432
-});
+const dbCon = mysql.createConnection(CLEARDB_DATABASE_URL);
 
 dbCon.connect(function(err) {
   if (err) {
