@@ -22,6 +22,7 @@ CREATE TABLE `users` (
   `name` VARCHAR(55) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
+  `reputation` INTEGER UNSIGNED DEFAULT NULL,
   `photo_path` VARCHAR(500) DEFAULT NULL,
   `bookmarked` INTEGER UNSIGNED DEFAULT NULL,
   `languages` INTEGER UNSIGNED DEFAULT NULL,
@@ -58,8 +59,26 @@ CREATE TABLE `resources` (
   `title` VARCHAR(30) DEFAULT NULL,
   `link` VARCHAR(2000) NOT NULL,
   `keywords` VARCHAR(255) DEFAULT NULL,
-  `likes` INTEGER UNSIGNED DEFAULT NULL,
-  `dislikes` INTEGER UNSIGNED DEFAULT NULL,
+  `score` INTEGER UNSIGNED DEFAULT NULL,
+  `date_added` DATETIME NOT NULL,
+  `date_updated` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'comments'
+--
+-- ---
+
+DROP TABLE IF EXISTS `comments`;
+
+CREATE TABLE `comments` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_resources` INTEGER UNSIGNED NOT NULL,
+  `id_users` INTEGER UNSIGNED DEFAULT NULL,
+  `title` VARCHAR(30) DEFAULT NULL,
+  `comment` VARCHAR(2000) NOT NULL,
+  `score` INTEGER UNSIGNED DEFAULT NULL,
   `date_added` DATETIME NOT NULL,
   `date_updated` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -91,6 +110,11 @@ CREATE TABLE `resource_type` (
   `type` VARCHAR(55) NOT NULL,
   PRIMARY KEY (`id`)
 );
+
+-- ---
+-- Table 'sub_topic'
+--
+-- ---
 
 DROP TABLE IF EXISTS `sub_topic`;
 
