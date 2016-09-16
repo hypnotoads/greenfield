@@ -1,13 +1,16 @@
 const mysql = require('mysql');
+let dbCon;
 
-// const dbCon = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: '',
-//   database: 'NList'
-// });
-
-const dbCon = mysql.createConnection(CLEARDB_DATABASE_URL);
+if(process.env && process.env.CLEARDB_DATABASE_URL){
+  dbCon = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+} else {
+  dbCon = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'NList'
+  });
+}
 
 dbCon.connect(function(err) {
   if (err) {
