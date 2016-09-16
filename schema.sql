@@ -59,7 +59,8 @@ CREATE TABLE `resources` (
   `title` VARCHAR(30) DEFAULT NULL,
   `link` VARCHAR(2000) NOT NULL,
   `keywords` VARCHAR(255) DEFAULT NULL,
-  `score` INTEGER UNSIGNED DEFAULT NULL,
+  `likes` INTEGER UNSIGNED DEFAULT NULL,  
+  `dislikes` INTEGER UNSIGNED DEFAULT NULL,
   `date_added` DATETIME NOT NULL,
   `date_updated` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -78,7 +79,8 @@ CREATE TABLE `comments` (
   `id_users` INTEGER UNSIGNED DEFAULT NULL,
   `title` VARCHAR(30) DEFAULT NULL,
   `comment` VARCHAR(2000) NOT NULL,
-  `score` INTEGER UNSIGNED DEFAULT NULL,
+  `likes` INTEGER UNSIGNED DEFAULT NULL,  
+  `dislikes` INTEGER UNSIGNED DEFAULT NULL,
   `date_added` DATETIME NOT NULL,
   `date_updated` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -129,6 +131,9 @@ CREATE TABLE `sub_topic` (
 
 ALTER TABLE `resources` ADD FOREIGN KEY (id_languages) REFERENCES `languages` (`id`);
 ALTER TABLE `resources` ADD FOREIGN KEY (id_resource_type) REFERENCES `resource_type` (`id`);
+
+ALTER TABLE `comments` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
+ALTER TABLE `comments` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 -- ALTER TABLE `resources` ADD FOREIGN KEY (id_sub_topic) REFERENCES `sub_topic` (`id`);
 ALTER TABLE `user_voted` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 ALTER TABLE `user_voted` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
