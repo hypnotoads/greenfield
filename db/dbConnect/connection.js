@@ -12,7 +12,8 @@ const dbCon = mysql.createConnection({
 
 dbCon.connect(function(err) {
   if (err) {
-    console.log(err);
+    console.error(err);
+    throw new Error('Connection to NList database failed');
   }
   console.log('Connected to NList database BIG Things are COMING');
 });
