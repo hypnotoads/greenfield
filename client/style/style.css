@@ -820,7 +820,7 @@ footer ul .copyright{
 }
 
 
-.hypnotoads_description,.daniel_description, .harris_description, .kent_description, .michael_description, .neekon_description {
+.hypnotoads_description, .daniel_description, .harris_description, .kent_description, .michael_description, .neekon_description {
   visibility: hidden;
   color: #667 !important;
   opacity:0;
