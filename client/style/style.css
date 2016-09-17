@@ -59,7 +59,6 @@ body {
   background:#FBFBFB;
 }
 
-
 a{
   text-decoration: none;
   font-weight: 400;
@@ -206,7 +205,8 @@ footer ul .copyright{
 }
 
 .topbar_logo{
-  width: 62.5px;
+  margin-top: 8px;
+  width: 100px;
 }
 
 .rezzy_button a{
@@ -336,9 +336,12 @@ footer ul .copyright{
   text-align: center;
   margin:1em auto;
   width: 100%;
-  font-size:5em;
+  font-size: 3em;
 }
 
+.main-lang-logos {
+  margin: 5px;
+}
 .main-lang-logos:hover{
   cursor:pointer;
   text-shadow: .04em .04em .1em #999;
@@ -366,8 +369,7 @@ footer ul .copyright{
 
 .search_container{
   text-align: center;
-  clear:both;
-  margin:1em 0em 2em 0em;
+  clear: both;
 }
 
 #search_input {
@@ -390,8 +392,8 @@ footer ul .copyright{
   position:absolute;
   line-height: 3em;
   z-index:1;
-  font-size:1.5em;
-  margin:.75em 0em 0em -1.5em;
+  font-size: 0.4em;
+/*  margin:.75em 0em 0em -1.5em;*/
   color: rgba(35,201,219, 1) !important;
 }
 
@@ -419,7 +421,7 @@ footer ul .copyright{
   border: thin solid #999;
   border-radius: .6em;
   max-width:40em;
-  width: 40%;
+  width: 50%;
   /* float:left; */
   margin: 1% 5%;
   padding: 1em;
@@ -844,3 +846,11 @@ footer ul .copyright{
   font-size: 3em;
 }
 
+#homepageLeftPanel {
+  width:20%;
+  margin:0
+  auto;
+  padding:.5em;
+  float: left;
+  background-color: lightgrey;
+}

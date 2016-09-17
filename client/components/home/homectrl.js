@@ -27,4 +27,8 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
     $scope[type+'Filter'][type] = value;
   };
 
+  $scope.deletePost = post => {
+    links.delete(post)
+  }
+
 }]);

@@ -45,6 +45,14 @@ app.factory('links', ['$http', ($http) => {
       });
   };
 
+  n.delete = function (post) {
+    let url = '/resources/' + post.id;
+    console.log("deleting", url)
+    return $http.delete(url)
+    .success(function (data) {
+      n.getAll();
+    })
+  }
   return n;
 
 }]);
