@@ -1,18 +1,27 @@
 <div> <!--View Resources-->
-  <img class="homepage_logo" src="/style/images/n-list-full_500.png">
-  <div class="filter_buttons_container">
+<div class="filter_buttons_container" id="homepageLeftPanel">
+  <div class="search_container">
+    <input type="text" placeholder="Search Resources" ng-model="search"/>
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <br>
+  </div>
+    <br>
     <i ng-click="languageFilter = {name: 'C language'}" class="devicon-c-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'C++ language'}" class="devicon-cplusplus-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'C# language'}" class="devicon-csharp-plain-wordmark colored main-lang-logos"></i>
+    <br><br>
     <i ng-click="languageFilter = {name: 'CSS language'}" class="devicon-css3-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Deployment language'}" class="devicon-heroku-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: '.Net language'}" class="devicon-dot-net-plain-wordmark colored main-lang-logos"></i>
+    <br><br>
     <i ng-click="languageFilter = {name: 'Git language'}" class="devicon-git-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Go language'}" class="devicon-go-plain colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Html language'}" class="devicon-html5-plain-wordmark colored main-lang-logos"></i>
+    <br><br>
     <i ng-click="languageFilter = {name: 'Java language'}" class="devicon-java-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Javascript language'}" class="devicon-javascript-plain colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Php language'}" class="devicon-php-plain colored main-lang-logos"></i>
+    <br><br>
     <i ng-click="languageFilter = {name: 'Python language'}" class="devicon-python-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Ruby language'}" class="devicon-ruby-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Sql language'}" class="devicon-mysql-plain-wordmark colored main-lang-logos"></i>
@@ -22,36 +31,39 @@
     <i ng-click="languageFilter = {}" class="fa fa-code main-lang-logos" aria-hidden="true"></i>
   </div>
 
-  <div style="display:block; text-align:center; border:thin solid #999; width:30%; margin:0 auto; padding:.5em;"> <!--sortby button -->
+<!-- they have some inline styling here - not sure what it overrides -->
+<div style="width: 65%; float: right; margin-right: 200px">
+<div style="display:block; text-align:center; border:thin solid #999; width:50%; margin:0 auto; padding:.5em; "> <!--sortby button -->
 
-    <a href="#" ng-click="sortType = 'date_added'; sortReverse = !sortReverse">
-    Date Added
-    <span ng-show="sortType == 'date_added' && !sortReverse" class="fa fa-caret-down"></span>
-    <!-- <span ng-show="sortType == 'date_added' && sortReverse" class="fa fa-caret-up"></span> -->
-    ||
-    </a>
+  <a href="#" ng-click="sortType = 'date_added'; sortReverse = !sortReverse">
+  Date Added
+  <span ng-show="sortType == 'date_added' && !sortReverse" class="fa fa-caret-down"></span>
+  <span ng-show="sortType == 'date_added' && sortReverse" class="fa fa-caret-up"></span> <!-- why did they comment these out originally? -->
+  |
+  </a>
 
-    <a href="#" ng-click ="sortType = 'dislikes - likes'; sortReverse = !sortReverse">
-    By Votes
-    <span ng-show="sortType == 'dislikes - likes' && !sortReverse" class="fa fa-caret-down"></span>
-    <!-- <span ng-show="sortType == 'dislikes - likes' && sortReverse" class="fa fa-caret-up"></span> -->
-    ||
-    </a>
+  <a href="#" ng-click ="sortType = 'dislikes - likes'; sortReverse = !sortReverse">
+  Score
+  <span ng-show="sortType == 'dislikes - likes' && !sortReverse" class="fa fa-caret-down"></span>
+  <span ng-show="sortType == 'dislikes - likes' && sortReverse" class="fa fa-caret-up"></span>
+  |
+  </a>
 
-    <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
-    Type
-    <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
-    <!-- <span ng-show="sortType == type' && sortReverse" class="fa fa-caret-up"></span> -->
-    ||
-    </a>
-  
-  </div>
+  <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+  Type
+  <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
+  <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-up"></span>
 
-  <div class="search_container"><input type="text" id="search_input" placeholder="Search Resources" ng-model="search" /><i class="fa fa-search fa-2x" aria-hidden="true"></i></div>
+  </a>
 
+</div>
+
+<center>
  <div id="resource_list_container">
-    <div class="resource_item" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search">
-      <a ng-href={{post.link}} target="_blank"> <!-- clicking on anything besides like or dislikes will lead you to the page -->
+    <div class="resource_item" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search" ng-show="{{ post.likes - post.dislikes > -3 }}">
+      <a ng-href={{post.link}} target="_blank">  <!-- clicking on anything besides like or dislikes will lead you to the page -->
+
+        <!-- code for each resource card -->
         <div class="resource_title">{{post.title}}</div>
         <div class="resource_type">
           <span ng-if="post.type === 'Article'" ><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
@@ -74,6 +86,11 @@
           <div class="resource" ng-click="incrementDislike(post)"> <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
           <div class="resource">{{ post.likes - post.dislikes > 0 ? post.likes - post.dislikes : 0 }}</div>
       </div>
+      <button>Comment</button>
+      <button ng-click="deletePost(post)">Delete</button>
     </div>
   </div>
+</center>
 </div>
+</div>
+
