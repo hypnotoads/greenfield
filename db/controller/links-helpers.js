@@ -16,7 +16,7 @@ let Links = {
       l : languages
       s : sub_topic
     */
-    const query = 'SELECT r.title, r.id, r.id_sub_topic, \
+    const query = 'SELECT r.id_users, r.title, r.id, r.id_sub_topic, \
     r.id_languages, r.id_resource_type, r.link, r.date_added, \
     r.date_updated, r.keywords, r.likes, r.dislikes,\
     t.type, l.name, l.logo, s.topic \
@@ -47,12 +47,12 @@ let Links = {
 
    //subtopic can be null
 
-   let data = [params.title, params.language,(params.subTopic || null), params.type, params.link, params.keywords, params.likes, params.dislikes];
+   let data = [params.user, params.title, params.language,(params.subTopic || null), params.type, params.link, params.keywords, params.likes, params.dislikes];
 
-  const query = 'INSERT INTO resources(title, id_languages,\
+  const query = 'INSERT INTO resources(id_users, title, id_languages,\
        id_sub_topic, id_resource_type,\
        link, date_added, keywords,\
-       likes, dislikes) value (?,?, ?, ?, ?, NOW(), ?, ?, ?)';
+       likes, dislikes) value (?, ?,?, ?, ?, ?, NOW(), ?, ?, ?)';
     db.query(query, data, (err, results) => callback(err, results) );
   },
 

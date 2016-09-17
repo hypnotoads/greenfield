@@ -31,6 +31,7 @@ app.factory('links', ['$http', ($http) => {
   n.addOne = function(post) {
     return $http.post('/resources', post)
       .success(function(data) {
+        console.log(data)
         n.links.push(data);
         n.getAll();
       });

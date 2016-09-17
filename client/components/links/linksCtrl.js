@@ -3,10 +3,13 @@
 var app = angular.module('nList.links', []);
 
 app.controller('linksCtrl',['$scope','links','checkUser', ($scope, links, checkUser) => {
+  checkUser.userStatus().success(data => $scope.user = data[0]);
+
   $scope.posts = links.links;
 
   $scope.addPost = () => {
     links.addOne({
+      user: $scope.user.id,
       title: $scope.title,
       language: $scope.data.name,
       subTopic: $scope.data.topic,
