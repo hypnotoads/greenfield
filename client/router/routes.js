@@ -15,6 +15,9 @@ angular.module('nList', ['nList.services', 'nList.home', 'nList.main','ui.router
         }],
         languagePromise : ['links', (links) => {
           return links.getLanguages();
+        }],
+        commentPromise : ['links', (links) => {
+          return links.getAllComments();
         }]
       }
     })
@@ -23,9 +26,9 @@ angular.module('nList', ['nList.services', 'nList.home', 'nList.main','ui.router
       templateUrl: 'components/links/links.html',
       controller: 'linksCtrl',
       resolve: {
-        checkUser : ['checkUser',(checkUser) => {
-          return checkUser.userStatus();
-        }]
+        // checkUser : ['checkUser',(checkUser) => {
+        //   return checkUser.userStatus();
+        // }]
       }
     })
     .state('profile', {

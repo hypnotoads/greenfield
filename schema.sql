@@ -55,11 +55,12 @@ CREATE TABLE `resources` (
   `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_languages` INTEGER UNSIGNED NOT NULL,
   `id_sub_topic` INTEGER UNSIGNED DEFAULT NULL,
+  `id_users` INTEGER UNSIGNED NOT NULL,
   `id_resource_type` INTEGER UNSIGNED NOT NULL,
   `title` VARCHAR(30) DEFAULT NULL,
   `link` VARCHAR(2000) NOT NULL,
   `keywords` VARCHAR(255) DEFAULT NULL,
-  `likes` INTEGER UNSIGNED DEFAULT NULL,  
+  `likes` INTEGER UNSIGNED DEFAULT NULL,
   `dislikes` INTEGER UNSIGNED DEFAULT NULL,
   `date_added` DATETIME NOT NULL,
   `date_updated` DATETIME DEFAULT NULL,
@@ -79,7 +80,7 @@ CREATE TABLE `comments` (
   `id_users` INTEGER UNSIGNED DEFAULT NULL,
   `title` VARCHAR(30) DEFAULT NULL,
   `comment` VARCHAR(2000) NOT NULL,
-  `likes` INTEGER UNSIGNED DEFAULT NULL,  
+  `likes` INTEGER UNSIGNED DEFAULT NULL,
   `dislikes` INTEGER UNSIGNED DEFAULT NULL,
   `date_added` DATETIME NOT NULL,
   `date_updated` DATETIME DEFAULT NULL,
@@ -131,6 +132,7 @@ CREATE TABLE `sub_topic` (
 
 ALTER TABLE `resources` ADD FOREIGN KEY (id_languages) REFERENCES `languages` (`id`);
 ALTER TABLE `resources` ADD FOREIGN KEY (id_resource_type) REFERENCES `resource_type` (`id`);
+ALTER TABLE `resources` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 
 ALTER TABLE `comments` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
 ALTER TABLE `comments` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
