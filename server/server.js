@@ -53,6 +53,7 @@ app.get('/resources/:id', links.resourcesID.getOne);
 
 app.delete('/resources/:id', links.resourcesID.deleteOne);
 
+app.post('/resources/:id', links.resourcesID.emailOne);
 //Get language resources from lang tabe
 
 app.get('/langResources', links.resourses.getLanguages);
