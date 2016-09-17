@@ -1,7 +1,7 @@
 'use strict';
 
 const mysql = require('mysql');
-let auth; 
+let auth;
 let dbCon;
 
 if(process.env && process.env.PW){
