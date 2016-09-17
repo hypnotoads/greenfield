@@ -2,7 +2,9 @@
 
 var app = angular.module('nList', []);
 
-app.controller('linksCtrl', ['$scope', 'links', ($scope, links) => {
+app.controller('linksCtrl',['$scope','links','checkUser', ($scope, links, checkUser) => {
+  checkUser.userStatus().success(data => $scope.user = data[0]);
+
   $scope.link = '';
   $scope.title = '';
 
@@ -46,10 +48,10 @@ app.controller('linksCtrl', ['$scope', 'links', ($scope, links) => {
 
   $scope.posts = links.links;
 
-checkUser.userStatus().success(data => scope.user = data[0]);
   $scope.addPost = () => {
-    links.addOne({
-      title: $scope.user.id,
+    links.addOne({ 
+      user: $scope.user.id,
+      title: $scope.title,
       language: $scope.data.name,
       subTopic: $scope.data.topic,
       type: $scope.data.type,
@@ -205,4 +207,26 @@ app.factory('links', ['$http', ($http) => {
       });
   };
   return n;
+}]);
+
+app.factory('checkUser',['$http', '$window', ($http, $window) => {
+  var checkUser = {
+    currUser: false
+  };
+
+checkUser.userStatus = () => {
+  return $http.get('http://127.0.0.1:3000/updateUser')
+  .success(data => {
+    checkUser.currUser = data[0];
+  })
+  // .error((res, status) => { //Allow not logged in users to stay on home page or about page
+  //   if(window.location.href !== window.location.origin+'/#/home' && window.location.href !== window.location.origin+'/#/about' && status === 401){
+  //     $window.location.href="/login";
+  //   }
+  // });
+};
+
+
+return checkUser;
+
 }]);
