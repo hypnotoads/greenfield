@@ -20,6 +20,26 @@ const helper = require('sendgrid').mail;
 
 module.exports= {};
 
+module.exports.comments = {
+  getAll: (req, res)=>{
+    Links.getAllComments((err,data)=>{
+      if(err) console.log(err);
+      res.json(data);
+    });
+  },
+
+  postOne: (req, res)=>{
+    if(users.sess !== undefined){
+      Links.postOneComment(req.body, (err,data)=>{
+        if(err) console.log(err);
+        res.json(data);
+      });
+    } else{
+      res.status(403).send("Please log in");
+    }
+  }
+};
+
 module.exports.resourses = {
   postOne: (req, res)=>{
     if(users.sess !== undefined){

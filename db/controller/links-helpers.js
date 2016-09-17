@@ -32,8 +32,16 @@ let Links = {
     const query = 'SELECT * FROM languages';
     db.query(query, (err, results) => callback(err, results) );
   },
- 
- 
+
+
+  getAllComments: (callback) =>{
+    const query = 'SELECT c.id, c.id_resources, c.id_users, c.title, c.comment, c.likes, c.dislikes, c.date_added, c.date_updated, u.name \
+    FROM comments c\
+    JOIN users u ON u.id = c.id_users \
+    ORDER BY date_added DESC';
+    db.query(query, (err, results) => callback(err, results) );
+  },
+
   // ****POST A RESOURCE**** //
   postOne: (params, callback) =>{
 
@@ -48,10 +56,20 @@ let Links = {
     db.query(query, data, (err, results) => callback(err, results) );
   },
 
+  // ****POST A COMMENT**** //
+  postOneComment: (params, callback) =>{
+
+  let data = [params.postid, params.userid, params.title, params.comment, params.likes, params.dislikes];
+
+  const query = 'INSERT INTO comments(id_resources, id_users, title,\
+       comment, likes, dislikes, date_added) value (?, ?, ?, ?, ?, ?, NOW())';
+    db.query(query, data, (err, results) => callback(err, results) );
+  },
+
   // ****GET A RESOURCE **** //
 
   getOne: (linkId, callback) =>{
-    
+
     let data = [linkId];
 
     const query = 'SELECT r.id, l.name, t.type, r.sub_topic_id, r.link, \
@@ -69,7 +87,7 @@ let Links = {
   updateVote: (params, callback) =>{
     params.vote = Number(params.vote); // make sure it is being read as a number
     let voteData = [params.uid, params.id, params.vote]; //uid  = user id // id = resource id
-         
+
     //Check if vote already exists
     const checkUserVote = 'SELECT * FROM user_voted WHERE id_users = '+params.uid;
     let alreadyVoted = false;
@@ -106,8 +124,8 @@ let Links = {
 
         if(!alreadyVoted){
           const votedQuery = 'INSERT INTO user_voted(id_users,id_resources, vote) VALUE(?,?,?)';
-          
-          params.vote === 1 ? likes++ : dislikes++ ; 
+
+          params.vote === 1 ? likes++ : dislikes++ ;
           db.query(votedQuery, voteData, (error, data) => {
             updateResourcesTable(likes,dislikes);
           });
@@ -127,7 +145,7 @@ let Links = {
             });
           }else{
             //if votes are equivalent, delete the vote, if they are not equivalent to what is in database, switch accordingly
-            
+
             const userVoteQuery = 'UPDATE user_voted u SET vote = ? WHERE u.id_resources = '+ params.id +' AND u.id_users ='+ params.uid;
             if(params.vote > userVoteStatus){
               dislikes--;

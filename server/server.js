@@ -48,6 +48,10 @@ app.get('/resources', links.resourses.getAll);
 app.put('/resources', links.resourses.updateVote);
 
 
+app.post('/comments', links.comments.postOne);
+
+app.get('/comments', links.comments.getAll);
+
 
 app.get('/resources/:id', links.resourcesID.getOne);
 
