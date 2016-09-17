@@ -25,6 +25,7 @@
     <i ng-click="languageFilter = {name: 'Python language'}" class="devicon-python-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Ruby language'}" class="devicon-ruby-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Sql language'}" class="devicon-mysql-plain-wordmark colored main-lang-logos"></i>
+    <span ng-click="languageFilter = {name: 'General CS topic'}" class="colored main-lang-logos">CS</span>
     <br/>
     <br/>
     <!--This clears language selection from above -->
@@ -84,7 +85,7 @@
       <div class="like_dislike">
           <div class="resource" ng-click="incrementLike(post)"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
           <div class="resource" ng-click="incrementDislike(post)"> <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
-          <div class="resource">{{ post.likes - post.dislikes > 0 ? post.likes - post.dislikes : 0 }}</div>
+          <div class="resource">{{ post.likes - post.dislikes }}</div>
       </div>
       <button>Comment</button>
       <button ng-click="deletePost(post)">Delete</button>

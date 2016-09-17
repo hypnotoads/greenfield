@@ -35,10 +35,18 @@ app.controller('linksCtrl',['$scope','links','checkUser', ($scope, links, checkU
   $scope.data = {
     type: null,
     typeOptions: [
-      {value: '1', label: 'Article'},
-      {value: '2', label: 'Book'},
-      {value: '3', label: 'Forum'},
-      {value: '4', label: 'Video'}
+      {value: '1', label: 'Aggregator'},
+      {value: '2', label: 'Article'},
+      {value: '3', label: 'Blog'},
+      {value: '4', label: 'Book'},
+      {value: '5', label: 'Channel'},
+      {value: '6', label: 'Forum'},
+      {value: '7', label: 'MOOC'},
+      {value: '8', label: 'Paid Content'},
+      {value: '9', label: 'Video'},
+      {value: '10', label: 'Other'},
+      {value: '11', label: 'Search Engine'},
+      {value: '12', label: 'Tutorial'}
     ],
     name: null,
     languageOptions: [
@@ -56,7 +64,8 @@ app.controller('linksCtrl',['$scope','links','checkUser', ($scope, links, checkU
       {value: '12', label: 'Php'},
       {value: '13', label: 'Python'},
       {value: '14', label: 'Ruby'},
-      {value: '15', label: 'Sql'}
+      {value: '15', label: 'Sql'},
+      {value: '16', label: 'General CS topic'}
     ],
     topic: null,
     topics: {
@@ -134,6 +143,10 @@ app.controller('linksCtrl',['$scope','links','checkUser', ($scope, links, checkU
           {value: '34', label: 'none'},
           {value: '32', label:'MySql'},
           {value: '33', label:'PostgreSql'},
+        ],
+
+      '16':[
+          {value: '34', label: 'none'}
         ]
     }
    };
