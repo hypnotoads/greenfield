@@ -178,7 +178,8 @@ ALTER TABLE `user_voted` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (
   ('Php language', 'php'),
   ('Python language', 'python'),
   ('Ruby language', 'ruby'),
-  ('MySql language', 'sql');
+  ('MySql language', 'sql'),
+  ('General CS topic', 'general');
 
 -- this will create an id_languages of 1 via auto_increment for the sub_topics below
 
@@ -189,8 +190,18 @@ ALTER TABLE `user_voted` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (
 -- ('Forum'), ('Article'), ('Video');
 
 INSERT INTO `resource_type` (`type`) VALUES
-('Article'), ('Book'), ('Forum'), ('Video');
-
+('Aggregator'),
+('Article'),
+('Blog'),
+('Book'),
+('Channel'),
+('Forum'),
+('MOOC'),
+('Paid Content'),
+('Video'),
+('Other'),
+('Search Engine'),
+('Tutorial');
 
 INSERT INTO `sub_topic` (`topic`) VALUES
 ('Bootstrap'),
