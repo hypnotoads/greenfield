@@ -444,6 +444,7 @@ footer ul .copyright{
   color: #333 !important;
   font-size: 2.427em;
   float:left;
+  margin: .5em .5em 0 .5em;
 }
 
 .resource_url{
@@ -452,8 +453,9 @@ footer ul .copyright{
   color: #469;
   float:left;
   padding: .5em;
-/*  background: rgba(112,128,144,1);
-*/  width: 100%;
+  background: #EEE;
+  width: 100%;
+  padding-right: 0.5em;
 }
 
 .resource_type { /* icons */

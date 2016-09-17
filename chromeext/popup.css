@@ -1,0 +1,91 @@
+body {
+  font-family: 'Source Sans Pro';
+}
+.add_resource_container{
+    text-align:center;
+    display:block;
+  }
+  #rezzy_guidelines{
+    position:absolute;
+    left:0;
+    top:10%;
+    background:#099;
+  }
+  .rezzy_title{
+    font-size:4em;
+    font-weight:700;
+    background-color: #999;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+      -moz-background-clip: text;
+            background-clip: text;
+  }
+  .add_resource_form{
+    display:block;
+    margin:2em auto 3em auto;
+    width:50%;
+    min-width:400px;
+    max-width:600px;
+    text-align:center;
+  }
+  .add_resource_container input, select, textarea{
+    font-size:1em;
+    padding:0 .5em;
+    display:block;
+    height:3em;
+    color:#667;
+    width:100%;
+    margin:.5em auto;
+    max-width:70%;
+    text-align:justify;
+    border:thin solid #CCC;
+    outline-color: rgba(35,201,219, 1);
+  }
+
+  .add_resource_container textarea{
+    min-height:9em;
+  }
+
+  .add_resource_container button{
+    float:none;
+    text-align: center;
+    background:none;
+    border: thin solid rgba(35,201,219, 1);
+    border-radius: .2em;
+    color: #667;
+    padding:.5em;
+    outline: none;
+    font-size: 1.2em;
+    width:70%;
+    margin:3em;
+  }
+  .add_resource_container button:hover{
+    transition: color .2s, background-color .2s;
+    text-align: center;
+    color:#FFF;
+    background: rgba(35,201,219, 1);
+    border: thin solid rgba(35,201,219, 1);
+    cursor:pointer;
+  }
+
+  .rules{
+    text-align:justify;
+    margin:0 auto;
+    color:#999;
+    width:70%;
+  }
+  .rules h2{
+    font-weight:700;
+    margin:1em 0em;;
+  }
+  .rules li{
+    padding:.3em 0em;
+    list-style: square;
+  }
+
+  .successMessage {
+    color:#008000;
+    font-weight: 700;
+    font-size: 2em;
+  }
