@@ -58,7 +58,9 @@
   </a>
 
 </div>
+fake comments: {{ fakeComments }}
 
+fake inbox: {{ fakeInbox }}
 <center>
  <div id="resource_list_container">
     <div class="resource_item" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search" ng-show="{{ post.likes - post.dislikes > -3 }}">
@@ -87,8 +89,19 @@
           <div class="resource" ng-click="incrementDislike(post)"> <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
           <div class="resource">{{ post.likes - post.dislikes }}</div>
       </div>
-      <button>Comment</button>
+
+      <input type="text" ng-model="title"/>
+      <input type="text" ng-model="comment"/>
+      <button ng-click="addComment(post.id, comment)">Comment</button>
+
+      <br>
       <button ng-click="deletePost(post)">Delete</button>
+
+
+      <br>
+      <input type="text" ng-model="recipientName"/>
+      <input type="text" ng-model="recipientEmail"/>
+      <button ng-click="emailLink(post.id, recipientName, recipientEmail)">Email link</button>
     </div>
   </div>
 </center>
