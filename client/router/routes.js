@@ -15,6 +15,9 @@ angular.module('nList', ['nList.services', 'nList.home', 'nList.main','ui.router
         }],
         languagePromise : ['links', (links) => {
           return links.getLanguages();
+        }],
+        commentPromise : ['links', (links) => {
+          return links.getAllComments();
         }]
       }
     })

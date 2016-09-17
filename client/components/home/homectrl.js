@@ -8,6 +8,7 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
 
   $scope.posts = links.links; //Array of all links from database
   $scope.languages = links.languages; //Array of all main languages
+  $scope.comments = links.comments;
   $scope.sortType = 'date_added';
   $scope.sortReverse = false;
   $scope.searchFinish = '';
@@ -45,9 +46,8 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
       userid: $scope.headerUser.id,
       likes: 0,
       dislikes: 0
-
     }
-    $scope.fakeComments.push(newComment)
+    links.addOneComment(newComment)
   }
   $scope.showComments = function () {
 
