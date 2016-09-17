@@ -1,5 +1,7 @@
+
 <div class="add_resource_container"> <!--Add Resources-->
   <h1 class="rezzy_title">Add A Resource</h1>
+  {{ user.id === 1 }} ??????
   <form class="add_resource_form" ng-submit="addPost(); successMessage = true">
     <input type="text" name="title", placeholder="Title" ng-model="title" required>
     <br />

@@ -418,21 +418,21 @@ footer ul .copyright{
   vertical-align: top;
   min-height: 15em;
   background-color: #FAFAFA;
-  border: thin solid #999;
+  border: thin solid #DDD;
   border-radius: .6em;
   max-width:40em;
-  width: 50%;
+  width: 45%;
   /* float:left; */
-  margin: 1% 5%;
-  padding: 1em;
-}
+  margin: 1% 2%;
+/*  padding: 1em;
+*/}
 
 .resource_item:hover {
-  transition: box-shadow .2s;
+  /*transition: box-shadow .2s;
   border-radius: .5em;
   border: solid .2em rgba(32,182,199,.9);
   box-shadow: .4em .4em .1em rgba(32,182,199,.9);
-  cursor:pointer;
+  cursor:pointer;*/
 }
 
 .resource_title {
@@ -444,16 +444,18 @@ footer ul .copyright{
   color: #333 !important;
   font-size: 2.427em;
   float:left;
+  margin: .5em .5em 0 .5em;
 }
 
 .resource_url{
   clear:both;
   font-size:1em;
-  color: #FFF;
+  color: #469;
   float:left;
   padding: .5em;
-  background: rgba(112,128,144,1);
+  background: #EEE;
   width: 100%;
+  padding-right: 0.5em;
 }
 
 .resource_type { /* icons */
