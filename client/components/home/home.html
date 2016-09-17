@@ -58,7 +58,7 @@
   </a>
 
 </div>
-fake comments: {{ fakeComments }}
+comments: {{ comments }}
 
 fake inbox: {{ fakeInbox }}
 <center>
@@ -92,7 +92,7 @@ fake inbox: {{ fakeInbox }}
 
       <input type="text" ng-model="title"/>
       <input type="text" ng-model="comment"/>
-      <button ng-click="addComment(post.id, comment)">Comment</button>
+      <button ng-click="addComment(post.id, title, comment)">Comment</button>
 
       <br>
       <button ng-click="deletePost(post)">Delete</button>
