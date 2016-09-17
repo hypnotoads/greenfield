@@ -3,13 +3,21 @@ var app = angular.module('nList.services', []);
 app.factory('links', ['$http', ($http) => {
   var n = {
     links: [],
-    languages: []
+    languages: [],
+    comments: []
   };
 
   n.getAll = function() {
     return $http.get('/resources')
       .success(function(data) {
       angular.copy(data, n.links);
+      });
+  };
+
+  n.getAllComments = function() {
+    return $http.get('/comments')
+      .success(function(data) {
+      angular.copy(data, n.comments);
       });
   };
 
@@ -26,6 +34,14 @@ app.factory('links', ['$http', ($http) => {
         n.links.push(data);
         n.getAll();
       });
+  };
+
+  n.addOneComment = function(post) {
+  return $http.post('/comments', post)
+    .success(function(data) {
+      n.comments.push(data);
+      n.getAllComments();
+    });
   };
 
   n.upvote = function(post) {
