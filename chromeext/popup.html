@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="nList" lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- FONTS AND STYLES -->
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Source+Sans+Pro" rel="stylesheet">
+  
+  <title>Save a Link to Linked List</title>
+</head>
+<body>
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="angular.min.js"></script>
+
+  <script src="linksCtrl.js"></script>
+  
+
+<div ng-controller="linksCtrl">
+
+    <!-- ### COMPONENT FILES ### -->
+  
+  
+  <div class="add_resource_container"> <!--Add Resources-->
+  <h1 class="rezzy_title">Add A Resource</h1>
+  <form class="add_resource_form" ng-submit="addPost(); successMessage = true">
+    <input id="linktitle" type="text" name="title", placeholder="Title" ng-model="title" required>
+    <br />
+
+    <!-- ### LINK DESCRIPTION  ###-->
+    <textarea id="linkdescription" type="text" name="Description" placeholder="Description" ng-model="description" required></textarea>
+    <br />
+
+    <!-- ### TYPE OF RESOURCE ### -->
+    <select name="repeatSelect" id="repeatSelect" ng-model="data.type" required>
+      <option value="" disabled>Type of resource</option>
+      <option ng-repeat="option in data.typeOptions" value="{{option.value}}">{{option.label}}</option>
+    </select>
+    <br />
+
+    <!-- ### SELECT LANGUAGE ### -->
+    <select name="repeatSelect" id="repeatSelect" ng-model="data.name" required>
+      <option value="" disabled>Select language</option>
+      <option ng-repeat="option in data.languageOptions" value="{{option.value}}">{{option.label}}</option>
+    </select>
+    <br />
+
+    <!-- ### SPECIFIED TOPIC ### -->
+    <select name="repeatSelect" id="repeatSelect" ng-model="data.topic">
+      <option value="" disabled selected>Specified topic? (select none if n/a)</option>
+      <option ng-repeat="option in data.topics[data.name]" value="{{option.value}}">{{option.label}}</option>
+    </select>
+    <br />
+
+    <!-- ### LINK URL ### -->
+    <input id="linkurl" type="url" placeholder="Link http://www.example.com" ng-model="link" required>
+
+    <!-- ### SUBMIT REMINDERS ### -->
+    <ul class="rules">
+      <h2>Before you submit....</h2>
+      <li>Is all the information as accurate as possible?</li>
+      <li>Are your links clean and safe?</li>
+      <li>Can you make your description more detailed to help others out?</li>
+    </ul>
+
+    <!-- ### SUBMIT BUTTON AND MESSAGE ### -->
+    <button type="submit">Submit</button>
+  </form>
+  <span class="successMessage" ng-if="successMessage">It posted!</span>
+</div>
+  
+  </div>
+  
+
+</script>
+
+</body>
+</html>
