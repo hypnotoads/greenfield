@@ -70,6 +70,17 @@ app.factory('links', ['$http', ($http) => {
       n.getAll();
     })
   }
+
+  n.emailOne = function (post) {
+    const url = `/resources/${post.id}`;
+
+    console.log('post', post);
+    return $http.post(url, post)
+      .success(function (data) {
+        n.getAll();
+      });
+  };
+
   return n;
 
 }]);
