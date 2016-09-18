@@ -4,11 +4,13 @@ var app = angular.module('nList.home', []);
 
 app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUser) => {
   let user;
-  checkUser.userStatus().success(data =>  user = data[0]);
+  checkUser.userStatus().success(data => $scope.user = data[0]);
+  checkUser.userStatus().success(data => user = data[0]);
 
   $scope.posts = links.links; //Array of all links from database
   $scope.languages = links.languages; //Array of all main languages
   $scope.comments = links.comments;
+  $scope.users = links.users;
   $scope.sortType = 'date_added';
   $scope.sortReverse = false;
   $scope.searchFinish = '';
@@ -29,21 +31,20 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
   };
 
   $scope.deletePost = post => {
-    links.delete(post)
+    if ($scope.user.id) {
+      links.delete(post)
+    }
   }
 
   $scope.fakeComments = [];
   $scope.fakeInbox = [];
-
-  checkUser.userStatus().success(data => $scope.headerUser = data[0]);
-  // this is repeated in another controller. is there a way we can refactor?
 
   $scope.addComment = function (id, title, comment) {
     let newComment = {
       postid: id,
       title: title,
       comment: comment,
-      userid: $scope.headerUser.id,
+      userid: $scope.user.id,
       likes: 0,
       dislikes: 0
     }
@@ -58,8 +59,8 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
     let newEmail = {
       recipientName: name,
       recipientEmail: email,
-      senderName: $scope.headerUser.name,
-      senderEmail: $scope.headerUser.email
+      senderName: $scope.user.name,
+      senderEmail: $scope.user.email
     }
     $scope.fakeInbox.push(newEmail)
   }

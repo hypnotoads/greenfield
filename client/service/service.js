@@ -4,13 +4,21 @@ app.factory('links', ['$http', ($http) => {
   var n = {
     links: [],
     languages: [],
-    comments: []
+    comments: [],
+    users: []
   };
 
   n.getAll = function() {
     return $http.get('/resources')
       .success(function(data) {
       angular.copy(data, n.links);
+      });
+  };
+
+  n.getallUsers = function() {
+    return $http.get('/users')
+      .success(function(data) {
+      angular.copy(data, n.users);
       });
   };
 
@@ -31,6 +39,7 @@ app.factory('links', ['$http', ($http) => {
   n.addOne = function(post) {
     return $http.post('/resources', post)
       .success(function(data) {
+        console.log(data)
         n.links.push(data);
         n.getAll();
       });
