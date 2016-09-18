@@ -40,5 +40,8 @@
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0"
+  },
+  "engines": {
+    "node": "6.6.0"
   }
 }
