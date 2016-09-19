@@ -1,3 +1,4 @@
+
 const Links =  require("../../db/controller/links-helpers.js");
 const users = require("./user");
 const helper = require('sendgrid').mail;
@@ -71,8 +72,8 @@ module.exports.resourses = {
     Links.getAllSaved((err, data)=>{
       if(err)console.log(err);
       res.json(data);
-    })
-  }
+    });
+  },
 
   getLanguages: (req, res)=>{
     Links.getLanguages((err,data)=>{
