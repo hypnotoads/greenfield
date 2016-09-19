@@ -147,7 +147,7 @@ footer ul .copyright{
   margin-bottom:1.618em;
   color:#EEE;
   font-size: 1.1em;
-  background-color: rgba(16,91,99, .6);
+  background-color: #10C3F3;
   outline: none;
   border:none;
   box-shadow: .1em 0em .2em #999;
@@ -156,7 +156,7 @@ footer ul .copyright{
 
 .verification_container button:hover{
   transition: background-color .4s, color .4s;
-  background-color: rgba(16,91,99, .85);
+  background-color: #21D4FF;
   color:#FFF;
   cursor: pointer;
 
@@ -164,7 +164,7 @@ footer ul .copyright{
 
 .verification_container button:active{
   transition: background-color .4s, color .4s;
-  background-color: rgba(16,91,99, 1);
+  background-color: #fff;
   outline: none;
   color:#FFF;
   cursor: pointer;
@@ -270,7 +270,7 @@ footer ul .copyright{
 
 .profileMenu:hover{
    border-radius:.2em .2em 0em 0em;
-   background-color:#853323;
+   background-color: #10C3F3;
    border:thin solid #CCC;
    border-bottom:none;
 /*    box-shadow: inset 0em 0em 12em .7em #853323; */
@@ -283,7 +283,7 @@ footer ul .copyright{
     position: absolute;
     min-width: 100%;
     margin: 0 -1em; /* offset profileMenu offset */
-    background:#999;
+    background: #999;
     box-shadow: .4em 0em 1em #666;
 }
 
@@ -298,7 +298,7 @@ footer ul .copyright{
 .userMenu_item:hover{
   transition:background-color .2s;
   color:#fff !important;
-  background: rgba(41,233,255, .8);
+  background: #10C3F3;
 }
 .profileMenu a:hover{
   color: #fff !important;
@@ -318,7 +318,7 @@ footer ul .copyright{
 
 /**************** HOME PAGE RESOURCES DESIGNS SETTINGS *****************/
 .fa{
-  color: rgba(189,73,50, 1);
+  color: #00B3E3;
   font-size:1.1em;
 }
 .homepage_logo{
@@ -449,7 +449,7 @@ footer ul .copyright{
   word-wrap: break-word;
   font-weight:600;
   color: #333 !important;
-  font-size: 2.427em;
+  font-size: 1.6em;
 }
 
 .resource_url{
@@ -512,12 +512,13 @@ footer ul .copyright{
 }
 
 .profile_photo{
+  margin: 2em 0 0 5em;
   width:250px;
 }
 
 .profile_information_container{
-  float:left;
-  font-size:1.618em;
+  /*float:left;*/
+  /*font-size:1.618em;*/
   font-weight:600;
   color:#667;
   margin-left:1em;
@@ -539,7 +540,7 @@ footer ul .copyright{
 }
 
 .profile_language_container h2, .edit_profile_container h2{
-  clear:both;
+  /*clear:both;*/
   font-size:1.618em;
   font-weight:600;
   color:#667;
