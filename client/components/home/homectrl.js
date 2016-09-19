@@ -10,6 +10,8 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
   $scope.posts = links.links; //Array of all links from database
   $scope.languages = links.languages; //Array of all main languages
   $scope.comments = links.comments;
+  $scope.users = links.users;
+  $scope.userReputation = links.userReputation;
   $scope.sortType = 'date_added';
   $scope.sortReverse = false;
   $scope.searchFinish = '';
@@ -30,9 +32,7 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
   };
 
   $scope.deletePost = post => {
-    if ($scope.user.id) {
-      links.delete(post)
-    }
+    links.delete(post)
   }
 
   $scope.fakeComments = [];
@@ -49,25 +49,21 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
     }
     links.addOneComment(newComment)
   }
+
   $scope.showComments = function () {
 
   }
 
   $scope.emailLink = function (id, name, email) {
     // do we want to add some sort of validation to make sure "email" is a valid email address?
-    let newEmail = {
-      recipientName: name,
-      recipientEmail: email,
-      senderName: $scope.user.name,
-      senderEmail: $scope.user.email
-    }
-
     links.emailOne({
-      id,
-      name,
-      email,
+      id: id,
+      name: name,
+      email: email
     });
-
-    $scope.fakeInbox.push(newEmail)
   }
+
+
+
+
 }]);
