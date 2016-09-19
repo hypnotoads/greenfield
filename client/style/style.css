@@ -145,7 +145,7 @@ footer ul .copyright{
   width:100%;
   height:2.5em;
   margin-bottom:1.618em;
-  color:#EEE;
+  color:#EEEEEE;
   font-size: 1.1em;
   background-color: #10C3F3;
   outline: none;
@@ -157,16 +157,16 @@ footer ul .copyright{
 .verification_container button:hover{
   transition: background-color .4s, color .4s;
   background-color: #21D4FF;
-  color:#FFF;
+  color:#FFFFFF;
   cursor: pointer;
 
 }
 
 .verification_container button:active{
   transition: background-color .4s, color .4s;
-  background-color: #fff;
+  background-color: #FFFFFF;
   outline: none;
-  color:#FFF;
+  color:#FFFFFF;
   cursor: pointer;
 
 }
@@ -183,7 +183,7 @@ footer ul .copyright{
 }
 
 .appHeader a{
-  color:#FFF;
+  color:#FFFFFF;
 }
 
 .appHeader a:hover{
@@ -215,19 +215,19 @@ footer ul .copyright{
     border-radius:.2em;
     outline:none;
     background-color: #10C3F3;
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .rezzy_button a:hover{
   transition: background-color .2s;
-  color:#fff !important;
+  color:#FFFFFF !important;
   background-color: #21D4FF;
 }
 
 .rezzy_button a:active {
   transition: background-color .2s;
-  color:#fff !important;
-  background-color: #FFF;
+  color:#FFFFFF !important;
+  background-color: #FFFFFF;
   text-shadow: -.01em .01em #193047;
 }
 
@@ -240,20 +240,20 @@ footer ul .copyright{
   padding:.5em 1em;
   border-radius:.2em;
   outline:none;
-  color: #fff;
+  color: #FFFFFF;
   border: .2em solid rgba(30,170,186, 1);
 }
 
 .entryButtons a:hover {
   transition: background-color .2s;
-  color:#fff !important;
+  color:#FFFFFF !important;
   background-color: rgba(30,170,186, 1);
   text-shadow: -.03em .03em #27496d;
 }
 
 .entryButtons a:active {
   transition: background-color .2s;
-  color:#fff !important;
+  color:#FFFFFF !important;
   background-color: rgba(27,152,166, 1);
   text-shadow: -.01em .01em #193047;
 }
@@ -289,7 +289,7 @@ footer ul .copyright{
 
 .userMenu_item{
   color: #333 !important;
-  background-color:#fff;
+  background-color:#FFFFFF;
 /*   border:thin solid #CCC; */
   border-top:none;
   padding-left: .5em;
@@ -297,11 +297,11 @@ footer ul .copyright{
 
 .userMenu_item:hover{
   transition:background-color .2s;
-  color:#fff !important;
+  color:#FFFFFF !important;
   background: #10C3F3;
 }
 .profileMenu a:hover{
-  color: #fff !important;
+  color: #FFFFFF !important;
 }
 
 .profileMenu:hover .userMenu {
@@ -339,7 +339,8 @@ footer ul .copyright{
 }
 
 .main-lang-logos {
-  margin: 5px;
+  float: left;
+  margin: .25em;
 }
 .main-lang-logos:hover{
   cursor:pointer;
@@ -360,7 +361,7 @@ footer ul .copyright{
 .filter_button:hover{
   transition: color .2s, background-color .2s;
   text-align: center;
-  color:#FFF;
+  color:#FFFFFF;
   background: rgba(35,201,219, 1);
   border: thin solid rgba(35,201,219, 1);
   cursor:pointer;
@@ -388,12 +389,11 @@ footer ul .copyright{
 }
 
 .fa-search{
-  position:absolute;
   line-height: 3em;
   z-index:1;
   font-size: 0.4em;
 /*  margin:.75em 0em 0em -1.5em;*/
-  color: #fff !important;
+  color: #FFFFFF !important;
 }
 
 .fa-search:hover{
@@ -402,27 +402,30 @@ footer ul .copyright{
 
 #resource_list_container {
   /* display: block; */
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
   text-align: center;
   /* margin:0 auto; */
   max-width:100%;
-  min-width:400px;
+  min-width:200px;
   /* width:90%; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .resource_item {
   /* border-radius:.2em; */
+   transition: width 0.7s ease-out;
   text-align: left;
-  display: inline-block;
+  flex: 5 2 auto;
   vertical-align: top;
-  min-height: 15em;
-  background-color: #eee;
-/*  border: thin solid #DDD;
-*/  border-radius: .6em;
-  max-width:40em;
-  width: 45%;
-  /* float:left; */
-  margin: 1% 2%;
+  background-color: #EEEEEE;
+  border-radius: .6em;
+  width: 300px;
+  /*float:left;*/
+  margin-top: 2em;
+  margin-left: 2%;
+
   /*padding: 1em;*/
 }
 
@@ -457,7 +460,7 @@ footer ul .copyright{
   font-size:1em;
   color: #469;
   float:left;
-  background: #DDD;
+  background: #DDDDDD;
   width: 100%;
   padding: 0.5em 1em;
   margin-bottom: 1em;
@@ -512,7 +515,7 @@ footer ul .copyright{
 }
 
 .profile_photo{
-  margin: 2em 0 0 5em;
+  margin: 2em  0 0 5em;
   width:250px;
 }
 
@@ -564,7 +567,7 @@ footer ul .copyright{
 .edit_profile_button:hover{
   transition: color .2s, background-color .2s;
   text-align: center;
-  color:#FFF;
+  color:#FFFFFF;
   background: rgba(35,201,219, 1);
   border: thin solid rgba(35,201,219, 1);
   cursor:pointer;
@@ -618,7 +621,7 @@ footer ul .copyright{
 .submit_profile_button:hover{
   transition: color .2s, background-color .2s;
   text-align: center;
-  color:#FFF;
+  color:#FFFFFF;
   background: rgba(35,201,219, 1);
   border: thin solid rgba(35,201,219, 1);
   cursor:pointer;
@@ -643,9 +646,6 @@ footer ul .copyright{
   background-color: #999;
   color: transparent;
   text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
-  -webkit-background-clip: text;
-    -moz-background-clip: text;
-          background-clip: text;
 }
 
 .add_resource_form{
@@ -692,7 +692,7 @@ footer ul .copyright{
 .add_resource_container button:hover{
   transition: color .2s, background-color .2s;
   text-align: center;
-  color:#FFF;
+  color:#FFFFFF;
   background: rgba(35,201,219, 1);
   border: thin solid rgba(35,201,219, 1);
   cursor:pointer;
@@ -723,6 +723,8 @@ footer ul .copyright{
 
 /************* ABOUT PAGE *********************/
 .about_container {
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
 }
 .about_quote{
@@ -770,8 +772,8 @@ footer ul .copyright{
   height: 300px;
   margin: 2em;
   width: 100%;
-  /*display: -webkit-inline-box;
-  display:inline-box;*/
+  display: -webkit-inline-box;
+  display:inline-box;
   opacity: .6;
   text-align: center;
 
@@ -786,7 +788,7 @@ footer ul .copyright{
     height: 300px;
     line-height: 300px;
     display: none;
-    color: #FFF;
+    color: #FFFFFF;
 }
 
 .profile_overlay:hover{
@@ -860,9 +862,16 @@ footer ul .copyright{
 
 #homepageLeftPanel {
   width:20%;
+  min-width: 4em;
   margin:0
   auto;
   padding:.5em;
   float: left;
   background-color: lightgrey;
+}
+
+@media (max-width: 1010px){
+  #homepageLeftPanel {
+    width: 100%;
+  }
 }
