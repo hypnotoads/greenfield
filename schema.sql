@@ -57,9 +57,9 @@ CREATE TABLE `resources` (
   `id_sub_topic` INTEGER UNSIGNED DEFAULT NULL,
   `id_users` INTEGER UNSIGNED NOT NULL,
   `id_resource_type` INTEGER UNSIGNED NOT NULL,
-  `title` VARCHAR(30) DEFAULT NULL,
-  `link` VARCHAR(2000) NOT NULL,
-  `keywords` VARCHAR(255) DEFAULT NULL,
+  `title` VARCHAR(200) DEFAULT NULL,
+  `link` VARCHAR(300) NOT NULL,
+  `keywords` VARCHAR(500) DEFAULT NULL,
   `likes` INTEGER UNSIGNED DEFAULT NULL,
   `dislikes` INTEGER UNSIGNED DEFAULT NULL,
   `date_added` DATETIME NOT NULL,
@@ -126,6 +126,21 @@ CREATE TABLE `sub_topic` (
   `topic` VARCHAR(55) NOT NULL,
   PRIMARY KEY (`id`)
 );
+
+-- ---
+-- Table 'saved_links'
+--
+-- ---
+
+DROP TABLE IF EXISTS `saved_links`;
+
+CREATE TABLE `saved_links` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_users` INTEGER UNSIGNED DEFAULT NULL,
+  `id_resources` INTEGER UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
 -- ---
 -- Foreign Keys
 -- ---
@@ -140,6 +155,8 @@ ALTER TABLE `comments` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 ALTER TABLE `user_voted` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 ALTER TABLE `user_voted` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
 
+ALTER TABLE `saved_links` ADD FOREIGN KEY (id_resources) REFERENCES `resources` (`id`);
+ALTER TABLE `saved_links` ADD FOREIGN KEY (id_users) REFERENCES `users` (`id`);
 
 -- ---
 -- Table Properties

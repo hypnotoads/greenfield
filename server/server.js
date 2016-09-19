@@ -49,6 +49,10 @@ app.get('/resources', links.resourses.getAll);
 
 app.put('/resources', links.resourses.updateVote);
 
+app.post('/bookmarks', links.resources.saveOne);
+
+app.get('/bookmarks', links.resources.getAllSaved);
+
 
 app.post('/comments', links.comments.postOne);
 
@@ -60,6 +64,8 @@ app.get('/resources/:id', links.resourcesID.getOne);
 app.delete('/resources/:id', links.resourcesID.deleteOne);
 
 app.post('/resources/:id', links.resourcesID.emailOne);
+
+
 //Get language resources from lang tabe
 
 app.get('/langResources', links.resourses.getLanguages);

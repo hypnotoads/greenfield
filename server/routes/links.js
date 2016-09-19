@@ -60,6 +60,20 @@ module.exports.resourses = {
     });
   },
 
+  saveOne: (req, res)=>{
+    Links.saveOne((err, data)=>{
+      if (err) console.log(err);
+      res.json(data);
+    });
+  },
+
+  getAllSaved: (req, res)=>{
+    Links.getAllSaved((err, data)=>{
+      if(err)console.log(err);
+      res.json(data);
+    })
+  }
+
   getLanguages: (req, res)=>{
     Links.getLanguages((err,data)=>{
       if(err) console.log(err);

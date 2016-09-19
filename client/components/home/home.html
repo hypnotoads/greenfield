@@ -75,7 +75,7 @@
           <span ng-if="post.topic !== 'angularjs'"><i class="devicon-{{post.topic.split(' ').join('').toLowerCase()}}-plain-wordmark colored miniCodeLogo"></i></span>
         </div>
         <div class="resource_title">{{post.title}}</div>
-        <div>Shared by: {{ post.username }} (user karma: {{ userReputation[post.id_users] }})</div>
+        <div>Shared by: {{ post.username }} (user rep: {{ userReputation[post.id_users] }})</div>
 
         <div class="resource_type">
           <span ng-if="post.type === 'Article'" ><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
@@ -92,7 +92,7 @@
           <div class="like_dislike">
           <div class="resource" ng-click="incrementLike(post)"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
           <div class="resource" ng-click="incrementDislike(post)"> <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
-          <div class="resource">{{ post.likes - post.dislikes + " karma" }}</div>
+          <div class="resource">{{ post.likes - post.dislikes + " props" }}</div>
         </div>
         </div> <!-- Retrieves domain name from url -->
         <div class="resource_bottom">
@@ -130,8 +130,7 @@
         All comments
         <br>
         <div ng-repeat="comment in comments" | ng-show="comment.id_resources === post.id">
-        <br>
-        {{ comment.title }}
+        <div class="comment_title">{{ comment.title }}</div>
         <br>
         {{ comment.comment }}
         <br>
@@ -147,12 +146,39 @@
     </div>
   </div>
   <div class="resource_item" style="min-height: 5em" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search" ng-show="{{ post.likes - post.dislikes <= -3 }} || post.minimized">
-    <div class="resource_url">
-        {{post.link.replace('http://','').replace('https://','').replace('www.','').split('/')[0] }}
-    </div>
-    <button ng-click="post.minimized = false">expand</button>
-    {{ post.id_users }}
-  </div>
+     <a ng-href={{post.link}} target="_blank">  <!-- clicking on anything besides like or dislikes will lead you to the page -->
+
+        <!-- code for each resource card -->
+        <div class="resource_top">
+
+        <div class="resource_lang">
+          <!-- the series of if statements here are due to inconsistency in naming patterns of the devicon.fr site -->
+          <i class="devicon-{{post.logo}}-plain colored miniCodeLogo"></i> <!--main language logo -->
+          <span ng-if="post.topic === 'D3js' || post.topic === 'angularjs'"><i class="devicon-{{post.topic.split(' ').join('').toLowerCase()}}-plain colored miniCodeLogo"></i></span>
+          <span ng-if="post.topic === 'Sass'"><i class="devicon-{{post.topic.split(' ').join('').toLowerCase()}}-original colored miniCodeLogo"></i></span>
+          <span ng-if="post.topic !== 'angularjs'"><i class="devicon-{{post.topic.split(' ').join('').toLowerCase()}}-plain-wordmark colored miniCodeLogo"></i></span>
+        </div>
+        <div class="resource_title">{{post.title}}</div>
+        <div>Shared by: {{ post.username }} (user karma: {{ userReputation[post.id_users] }})</div>
+
+        <div class="resource_type">
+          <span ng-if="post.type === 'Article'" ><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+          <span ng-if="post.type === 'Book'" ><i class="fa fa-book" aria-hidden="true"></i></span>
+          <span ng-if="post.type === 'Forum'" ><i class="fa fa-comments-o" aria-hidden="true"></i></span>
+          <span ng-if="post.type === 'Video'"><i class="fa fa-video-camera" aria-hidden="true"></i></span>
+        </div>
+        </div>
+      </a>
+        <div class="resource_url">
+        <a ng-href={{post.link}} target="_blank">
+          {{post.link.replace('http://','').replace('https://','').replace('www.','').split('/')[0] }}
+        </a>
+          <div class="like_dislike">
+          <div class="resource" ng-click="incrementLike(post)"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
+          <div class="resource" ng-click="incrementDislike(post)"> <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
+          <div class="resource">{{ post.likes - post.dislikes + " karma" }}</div>
+        </div>
+        </div> <!-- Retrieves domain name from url -->
 </div>
 </center>
 </div>
