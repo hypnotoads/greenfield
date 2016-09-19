@@ -71,7 +71,7 @@ module.exports.resourses = {
     Links.getAllSaved((err, data)=>{
       if(err)console.log(err);
       res.json(data);
-    })
+    });
   },
 
   getLanguages: (req, res)=>{
