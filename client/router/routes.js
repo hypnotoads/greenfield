@@ -11,13 +11,20 @@ angular.module('nList', ['nList.services', 'nList.home', 'nList.main','ui.router
       controller: 'homeCtrl',
       resolve: {
         linkPromise : ['links', (links) => {
-          return links.getAll();
+          return links.getAll().then(function (data) {
+            return links.getAllUsers().then(function (data) {
+              return links.retrieveReputations();
+            })
+          });
         }],
         languagePromise : ['links', (links) => {
           return links.getLanguages();
         }],
         commentPromise : ['links', (links) => {
           return links.getAllComments();
+        }],
+        userPromise : ['links', (links) => {
+          return links.getAllUsers();
         }]
       }
     })

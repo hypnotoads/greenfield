@@ -110,3 +110,10 @@ module.exports.logout = (req, res)=>{
   req.session.destroy();
   res.status(200).send("request processed");
   };
+
+module.exports.getAll = (req, res)=>{
+  Users.getAll((err,data)=>{
+      if(err) console.log(err);
+      res.json(data);
+  });
+};

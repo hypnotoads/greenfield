@@ -4,13 +4,22 @@ app.factory('links', ['$http', ($http) => {
   var n = {
     links: [],
     languages: [],
-    comments: []
+    comments: [],
+    users: [],
+    userReputation: {}
   };
 
   n.getAll = function() {
     return $http.get('/resources')
       .success(function(data) {
       angular.copy(data, n.links);
+      });
+  };
+
+  n.getAllUsers = function() {
+    return $http.get('/users')
+      .success(function(data) {
+      angular.copy(data, n.users);
       });
   };
 
@@ -31,7 +40,6 @@ app.factory('links', ['$http', ($http) => {
   n.addOne = function(post) {
     return $http.post('/resources', post)
       .success(function(data) {
-        console.log(data)
         n.links.push(data);
         n.getAll();
       });
@@ -49,7 +57,9 @@ app.factory('links', ['$http', ($http) => {
     post.vote = 1; //1 = upvote
     return $http.put('/resources', post)
     .success(function(data) {
-      n.getAll();
+      n.getAll().then(function () {
+        n.retrieveReputations();
+      })
     });
   };
 
@@ -58,7 +68,9 @@ app.factory('links', ['$http', ($http) => {
     post.vote = 0; //0 = downvote
     return $http.put('/resources', post)
       .success(function(data) {
-        n.getAll();
+        n.getAll().then(function () {
+          n.retrieveReputations();
+        })
       });
   };
 
@@ -69,6 +81,19 @@ app.factory('links', ['$http', ($http) => {
     .success(function (data) {
       n.getAll();
     })
+  }
+
+  n.retrieveReputations = function () {
+    for (var i = 0; i < n.users.length; i++) {
+      n.userReputation[n.users[i].id] = 0;
+      console.log(n.users[i])
+      for (var j = 0; j < n.links.length; j++) {
+        if (n.links[j].id_users === n.users[i].id) {
+          n.userReputation[n.users[i].id] += n.links[j].likes;
+          n.userReputation[n.users[i].id] -= n.links[j].dislikes;
+        }
+      }
+    }
   }
   return n;
 

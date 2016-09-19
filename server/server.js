@@ -26,6 +26,8 @@ app.use(session({
   cookie: {}
 }));
 
+app.get('/users', user.getAll);
+
 app.post('/login/validate', user.signIn);
 
 app.post('/signup/register', user.signUp);
