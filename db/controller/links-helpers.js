@@ -19,11 +19,12 @@ let Links = {
     const query = 'SELECT r.id_users, r.title, r.id, r.id_sub_topic, \
     r.id_languages, r.id_resource_type, r.link, r.date_added, \
     r.date_updated, r.keywords, r.likes, r.dislikes,\
-    t.type, l.name, l.logo, s.topic \
+    t.type, l.name, l.logo, s.topic, u.name AS "username", u.reputation\
     FROM resources r \
     JOIN resource_type t ON t.id = r.id_resource_type \
     JOIN languages l ON l.id = r.id_languages \
     JOIN sub_topic s ON s.id = r.id_sub_topic \
+    JOIN users u on u.id = r.id_users \
     ORDER BY date_added DESC';
     db.query(query, (err, results) => callback(err, results) );
   },

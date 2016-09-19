@@ -31,6 +31,11 @@ const Users = {
     db.query(query, [params], (err, results)=> callback(err, results) );
   },
 
+  getAll: (callback)=>{
+    const query = 'SELECT * FROM users';
+    db.query(query, (err, results) => callback(err, results) );
+  },
+
    // ****UPDATE USER INFO**** //
   updateOne:  (params, callback) => {
     let data = [params.name, params.photoPath, (params.languages || null), params.email, params.password];
@@ -38,7 +43,7 @@ const Users = {
     db.query(query, data, (err, results) => callback(err, results) );
   },
 
-  // ****DELETE USER [DESTROY ACCOUNT]**** // 
+  // ****DELETE USER [DESTROY ACCOUNT]**** //
   deleteOne:  (params, callback) => {
     let data = [params.email, params.password];
     const query = 'DELETE FROM users WHERE email=? AND password=? LIMIT 1';

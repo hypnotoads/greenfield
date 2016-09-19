@@ -62,7 +62,7 @@ body {
 a{
   text-decoration: none;
   font-weight: 400;
-  color: rgba(16,91,99, 1);
+  color: #333;
 }
 
 
@@ -176,7 +176,7 @@ footer ul .copyright{
 .appHeader {
   float:left;
   width:100%;
-  background-color: rgba(189,73,50, 1);
+  background-color: #00B3E3;
   /* border-bottom:#333 solid thin; */
   border-bottom: none;
   margin-bottom:2em;
@@ -214,21 +214,20 @@ footer ul .copyright{
     padding:.5em 1em;
     border-radius:.2em;
     outline:none;
+    background-color: #10C3F3;
     color: #fff;
-    border: thin solid rgba(232,167,58, 1);
 }
 
 .rezzy_button a:hover{
   transition: background-color .2s;
   color:#fff !important;
-  background-color: rgba(222,160,55, 1);
-  text-shadow: -.03em .03em #27496d;
+  background-color: #21D4FF;
 }
 
 .rezzy_button a:active {
   transition: background-color .2s;
   color:#fff !important;
-  background-color: rgba(212,153,52, 1);
+  background-color: #FFF;
   text-shadow: -.01em .01em #193047;
 }
 
@@ -394,7 +393,7 @@ footer ul .copyright{
   z-index:1;
   font-size: 0.4em;
 /*  margin:.75em 0em 0em -1.5em;*/
-  color: rgba(35,201,219, 1) !important;
+  color: #fff !important;
 }
 
 .fa-search:hover{
@@ -417,15 +416,23 @@ footer ul .copyright{
   display: inline-block;
   vertical-align: top;
   min-height: 15em;
-  background-color: #FAFAFA;
-  border: thin solid #DDD;
-  border-radius: .6em;
+  background-color: #eee;
+/*  border: thin solid #DDD;
+*/  border-radius: .6em;
   max-width:40em;
   width: 45%;
   /* float:left; */
   margin: 1% 2%;
-/*  padding: 1em;
-*/}
+  /*padding: 1em;*/
+}
+
+.resource_top {
+  padding: 1em 1em 0 1em;
+}
+
+.resource_bottom {
+  padding: 0 1em 1em 1em;
+}
 
 .resource_item:hover {
   /*transition: box-shadow .2s;
@@ -443,8 +450,6 @@ footer ul .copyright{
   font-weight:600;
   color: #333 !important;
   font-size: 2.427em;
-  float:left;
-  margin: .5em .5em 0 .5em;
 }
 
 .resource_url{
@@ -452,10 +457,10 @@ footer ul .copyright{
   font-size:1em;
   color: #469;
   float:left;
-  padding: .5em;
-  background: #EEE;
+  background: #DDD;
   width: 100%;
-  padding-right: 0.5em;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
 }
 
 .resource_type { /* icons */
@@ -467,15 +472,18 @@ footer ul .copyright{
 
 .resource_desc {
   font-size: 1.1em;
-  padding: 1em 0em 3em .5em;
+  padding: .5em;
   word-wrap: break-word;
   color: #43464C;
+  background-color: #F6F6F6;
+  border-radius: .2em;
   clear:both;
+  margin-bottom: 1em
 }
 
 .resource_lang {
-  padding: 1em 0em 0em .5em;
-  clear:both;
+  padding-right: 0.5em;
+  float:right;
 }
 
 .miniCodeLogo{
@@ -483,8 +491,9 @@ footer ul .copyright{
 }
 
 .like_dislike{
+  display: inline-block;
   font-size:1.2em;
-  text-align:right;
+  float:right;
 }
 
 .resource {
