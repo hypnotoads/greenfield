@@ -3,19 +3,8 @@
     <img class="profile_photo" ng-if="userUpdate.photo_path" ng-src="{{userUpdate.photo_path}}">
     <img class="profile_photo" ng-if="!userUpdate.photo_path" src="/style/images/profile_woman.png"> 
   </div>
-    <button class="edit_profile_button" ng-click="show_edit_profile_container = !show_edit_profile_container">Edit Profile</button>
   <div class="profile_information_container">
-    <div class="profile_name">{{ userUpdate.name }}</div>
-    <div class="profile_email">{{ userUpdate.email }}</div>
-  </div>
-  <div class="profile_language_container">
-    <h2> Favorite Languages </h2>
-    <div ng-if="userUpdate.languages" class="profile_languages">{{ userUpdate.languages }}</div>
-    <div ng-if="!userUpdate.languages" class="profile_languages">Edit your profile and add your favorite languages</div>
-  </div>
-
-  <div class="edit_profile_container" ng-if="show_edit_profile_container">
-    <h2> Edit Profile </h2>
+  <div class="edit_profile_container" > <!-- ng-if="show_edit_profile_container" -->
     <form method="post">
       <label> Name </label>
       <input class="input" ng-model="userUpdate.name" name="name" type="text" value="{{userUpdate.name}}">
@@ -26,6 +15,7 @@
       <label> New Password </label>
       <input class="input" ng-model="userUpdate.newPassword" name="password" type="password" value="">
     </form>
+      <label> Profile Picture </label>
       <form   name="up.upload_form">
         <input
           class="imageUpload"
@@ -44,4 +34,14 @@
         <button class="submit_profile_button" ng-click="up.submit(); editProfile()">Submit</button>
       </form>
     </div>
+    <!-- <div class="profile_name">{{ userUpdate.name }}</div>
+    <div class="profile_email">{{ userUpdate.email }}</div> -->
+  </div>
+   <!--  <button class="edit_profile_button" ng-click="show_edit_profile_container = !show_edit_profile_container">Edit Profile</button> -->
+  <!-- <div class="profile_language_container">
+    <h2> Favorite Languages </h2>
+    <div ng-if="userUpdate.languages" class="profile_languages">{{ userUpdate.languages }}</div>
+    <div ng-if="!userUpdate.languages" class="profile_languages">Edit your profile and add your favorite languages</div>
+  </div> -->
+
   </div>
