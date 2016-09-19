@@ -1,4 +1,3 @@
-
 const Links =  require("../../db/controller/links-helpers.js");
 const users = require("./user");
 const helper = require('sendgrid').mail;
@@ -31,7 +30,7 @@ module.exports.comments = {
   },
 
   postOne: (req, res)=>{
-    if(users.sess !== undefined){
+    if(req.session !== undefined){
       Links.postOneComment(req.body, (err,data)=>{
         if(err) console.log(err);
         res.json(data);
@@ -44,7 +43,7 @@ module.exports.comments = {
 
 module.exports.resourses = {
   postOne: (req, res)=>{
-    if(users.sess !== undefined){
+    if(req.session !== undefined){
       Links.postOne(req.body, (err,data)=>{ //Post one resource into resource database
         if(err) console.log(err);
         res.json(data);
@@ -83,7 +82,7 @@ module.exports.resourses = {
   },
 
   updateVote: (req, res)=>{
-    if(users.sess.email !== undefined){
+    if(req.session.email !== undefined){
       Links.updateVote(req.body, (err,data)=>{
         if(err) console.log(err);
         res.json(data);
@@ -106,7 +105,7 @@ module.exports.resourcesID = {
     },
 // login here
   deleteOne: (req, res)=>{
-      if(users.sess.email !== undefined){
+      if(req.session.email !== undefined){
         Links.deleteOne(req.params.id, (err,data)=>{
           if(err) console.log(err);
           res.json(data);
@@ -126,8 +125,8 @@ module.exports.resourcesID = {
 
       // console.log(data);
       // console.log('users.sess', users.sess);
-      if (users.sess.user !== undefined) {
-        Users.getOne(users.sess.user, (userError, [userData]) => {
+      if (req.session.user !== undefined) {
+        Users.getOne(req.session.user, (userError, [userData]) => {
           if (userError) {
             console.error(userError);
           } else {

@@ -7,19 +7,19 @@
     <i ng-click="languageFilter = {name: 'C language'}" class="devicon-c-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'C++ language'}" class="devicon-cplusplus-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'C# language'}" class="devicon-csharp-plain-wordmark colored main-lang-logos"></i>
-    
+
     <i ng-click="languageFilter = {name: 'CSS language'}" class="devicon-css3-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Deployment language'}" class="devicon-heroku-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: '.Net language'}" class="devicon-dot-net-plain-wordmark colored main-lang-logos"></i>
-    
+
     <i ng-click="languageFilter = {name: 'Git language'}" class="devicon-git-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Go language'}" class="devicon-go-plain colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Html language'}" class="devicon-html5-plain-wordmark colored main-lang-logos"></i>
-    
+
     <i ng-click="languageFilter = {name: 'Java language'}" class="devicon-java-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Javascript language'}" class="devicon-javascript-plain colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Php language'}" class="devicon-php-plain colored main-lang-logos"></i>
-    
+
     <i ng-click="languageFilter = {name: 'Python language'}" class="devicon-python-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Ruby language'}" class="devicon-ruby-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Sql language'}" class="devicon-mysql-plain-wordmark colored main-lang-logos"></i>
@@ -133,6 +133,7 @@
         <br>
         <div style="font-size: 1.2em">All comments</div>
         <br>
+
         <div ng-repeat="comment in comments" | ng-show="comment.id_resources === post.id">
         <div class="comment_title" style="font-size: 1em; font-weight: bold">{{ comment.title }}</div>
         <div class="comment_title" style="font-size: 0.8em">
