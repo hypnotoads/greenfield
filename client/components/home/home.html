@@ -3,37 +3,34 @@
   <div class="search_container">
     <input type="text" placeholder="Search Resources" ng-model="search"/>
     <i class="fa fa-search" aria-hidden="true"></i>
-    <br>
   </div>
-    <br>
     <i ng-click="languageFilter = {name: 'C language'}" class="devicon-c-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'C++ language'}" class="devicon-cplusplus-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'C# language'}" class="devicon-csharp-plain-wordmark colored main-lang-logos"></i>
-    <br><br>
+    
     <i ng-click="languageFilter = {name: 'CSS language'}" class="devicon-css3-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Deployment language'}" class="devicon-heroku-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: '.Net language'}" class="devicon-dot-net-plain-wordmark colored main-lang-logos"></i>
-    <br><br>
+    
     <i ng-click="languageFilter = {name: 'Git language'}" class="devicon-git-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Go language'}" class="devicon-go-plain colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Html language'}" class="devicon-html5-plain-wordmark colored main-lang-logos"></i>
-    <br><br>
+    
     <i ng-click="languageFilter = {name: 'Java language'}" class="devicon-java-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Javascript language'}" class="devicon-javascript-plain colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Php language'}" class="devicon-php-plain colored main-lang-logos"></i>
-    <br><br>
+    
     <i ng-click="languageFilter = {name: 'Python language'}" class="devicon-python-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Ruby language'}" class="devicon-ruby-plain-wordmark colored main-lang-logos"></i>
     <i ng-click="languageFilter = {name: 'Sql language'}" class="devicon-mysql-plain-wordmark colored main-lang-logos"></i>
     <span ng-click="languageFilter = {name: 'General CS topic'}" class="colored main-lang-logos">CS</span>
-    <br/>
-    <br/>
+
     <!--This clears language selection from above -->
     <i ng-click="languageFilter = {}" class="fa main-lang-logos" aria-hidden="true">&lt;/reset&gt;</i>
   </div>
 
 <!-- they have some inline styling here - not sure what it overrides -->
-<div style="width: 65%; float: right; margin-right: 200px">
+<div>
 <div style="display:block; text-align:center; padding:.5em; "> <!--sortby button -->
 
   <a href="#" ng-click="sortType = 'date_added'; sortReverse = !sortReverse">
@@ -59,7 +56,7 @@
 
 </div>
 
-<center>
+<center style="width: 80%; min-width: 30em; float: left;">
  <div id="resource_list_container">
     <div class="resource_item" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search" ng-show="{{ post.likes - post.dislikes > -3 }} && !post.minimized">
       <a ng-href={{post.link}} target="_blank">  <!-- clicking on anything besides like or dislikes will lead you to the page -->
