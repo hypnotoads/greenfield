@@ -56,20 +56,11 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
 
   $scope.emailLink = function (id, name, email) {
     // do we want to add some sort of validation to make sure "email" is a valid email address?
-    let newEmail = {
-      recipientName: name,
-      recipientEmail: email,
-      senderName: $scope.user.name,
-      senderEmail: $scope.user.email
-    }
-
     links.emailOne({
-      id,
-      name,
-      email,
+      id: id,
+      name: name,
+      email: email
     });
-
-    $scope.fakeInbox.push(newEmail)
   }
 
 

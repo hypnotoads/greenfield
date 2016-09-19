@@ -87,7 +87,6 @@ app.factory('links', ['$http', ($http) => {
   n.retrieveReputations = function () {
     for (var i = 0; i < n.users.length; i++) {
       n.userReputation[n.users[i].id] = 0;
-      console.log(n.users[i])
       for (var j = 0; j < n.links.length; j++) {
         if (n.links[j].id_users === n.users[i].id) {
           n.userReputation[n.users[i].id] += n.links[j].likes;
@@ -99,7 +98,6 @@ app.factory('links', ['$http', ($http) => {
 
   n.emailOne = function (post) {
     const url = `/resources/${post.id}`;
-
     console.log('post', post);
     return $http.post(url, post)
       .success(function (data) {
