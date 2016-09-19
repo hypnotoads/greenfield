@@ -119,7 +119,7 @@ module.exports.resourcesID = {
             // console.log('linkData', linkData);
             const fromEmail = new helper.Email(userData.email);
             const fromUsername = userData.name;
-            const toEmail = new helper.Email('sugarchap77@mailinator.com');
+            const toEmail = new helper.Email(userData.email);
             const toUsername = req.body.name;
             const subject = `${fromUsername} thought you would like this resource!`;
             const message =
