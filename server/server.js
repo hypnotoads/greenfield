@@ -49,9 +49,11 @@ app.get('/resources', links.resourses.getAll);
 
 app.put('/resources', links.resourses.updateVote);
 
-app.post('/bookmarks', links.resousces.saveOne);
 
-app.get('/bookmarks', links.resousces.getAllSaved);
+app.post('/bookmarks', links.resourses.saveOne);
+
+app.get('/bookmarks', links.resourses.getAllSaved);
+
 
 
 app.post('/comments', links.comments.postOne);

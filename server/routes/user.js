@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt-nodejs");
 
 module.exports = {};
 
-var sess;
 // lOGIN USERS AND REGISTER SESSION
 module.exports.signIn = (req, res) => {
 // redirect to signup when user does not exist
@@ -13,10 +12,8 @@ module.exports.signIn = (req, res) => {
     if(data.length > 0) {
       bcrypt.compare(req.body.password, data[0].password, (err, result) =>  {
         if(result){
-          sess = req.session;
-          sess.email = data[0].email;
-          sess.user = data[0].id;
-          module.exports.sess = sess;
+          req.session.email = data[0].email;
+          req.session.user = data[0].id;
           res.status(202).send();
         }else{
           res.status(401).send("That email and/or password was not found");
@@ -49,10 +46,8 @@ module.exports.signUp = (req, res)=>{
 
         Users.signUp(req.body, (err,data)=>{
           if(err) console.log(err);
-          sess = req.session;
-          sess.email = req.body.email;
-          sess.user = data.insertId;
-          module.exports.sess = sess;
+          req.session.email = req.body.email;
+          req.session.user = data.insertId;
           res.status(200).send();
         });
       })
@@ -65,8 +60,8 @@ module.exports.signUp = (req, res)=>{
 
 module.exports.getOneUser = (req, res)=>{
   //verify user is currently signed in
-  if(sess !== undefined){
-    Users.getOne(sess.user, (err,data)=>{
+  if(req.session !== undefined){
+    Users.getOne(req.session.user, (err,data)=>{
       if(err) console.log(err);
       res.json(data);
     });
@@ -106,7 +101,7 @@ module.exports.deleteOne = (req, res)=>{
 
 //LOGOUT ROUTE
 module.exports.logout = (req, res)=>{
-  sess = undefined;
+  req.session = undefined;
   req.session.destroy();
   res.status(200).send("request processed");
   };
