@@ -73,7 +73,7 @@ let Links = {
 
     let data = [linkId];
 
-    const query = 'SELECT r.id, l.name, t.type, r.sub_topic_id, r.link, \
+    const query = 'SELECT r.id, l.name, t.type, r.id_sub_topic, r.link, \
     r.date_added, r.keywords, r.likes, r.dislikes \
     FROM resources r \
     LEFT OUTER JOIN resource_type t ON (r.id_resource_type = t.id) \

@@ -62,6 +62,13 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
       senderName: $scope.user.name,
       senderEmail: $scope.user.email
     }
+
+    links.emailOne({
+      id,
+      name,
+      email,
+    });
+
     $scope.fakeInbox.push(newEmail)
   }
 

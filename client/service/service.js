@@ -83,6 +83,7 @@ app.factory('links', ['$http', ($http) => {
     })
   }
 
+
   n.retrieveReputations = function () {
     for (var i = 0; i < n.users.length; i++) {
       n.userReputation[n.users[i].id] = 0;
@@ -95,6 +96,16 @@ app.factory('links', ['$http', ($http) => {
       }
     }
   }
+
+  n.emailOne = function (post) {
+    const url = `/resources/${post.id}`;
+
+    console.log('post', post);
+    return $http.post(url, post)
+      .success(function (data) {
+        n.getAll();
+      });
+  };
   return n;
 
 }]);
