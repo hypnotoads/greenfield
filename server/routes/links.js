@@ -72,7 +72,7 @@ module.exports.resourses = {
       if(err)console.log(err);
       res.json(data);
     })
-  }
+  },
 
   getLanguages: (req, res)=>{
     Links.getLanguages((err,data)=>{
