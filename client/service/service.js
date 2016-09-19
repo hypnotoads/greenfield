@@ -4,21 +4,13 @@ app.factory('links', ['$http', ($http) => {
   var n = {
     links: [],
     languages: [],
-    comments: [],
-    users: []
+    comments: []
   };
 
   n.getAll = function() {
     return $http.get('/resources')
       .success(function(data) {
       angular.copy(data, n.links);
-      });
-  };
-
-  n.getallUsers = function() {
-    return $http.get('/users')
-      .success(function(data) {
-      angular.copy(data, n.users);
       });
   };
 
@@ -78,6 +70,17 @@ app.factory('links', ['$http', ($http) => {
       n.getAll();
     })
   }
+
+  n.emailOne = function (post) {
+    const url = `/resources/${post.id}`;
+
+    console.log('post', post);
+    return $http.post(url, post)
+      .success(function (data) {
+        n.getAll();
+      });
+  };
+
   return n;
 
 }]);
