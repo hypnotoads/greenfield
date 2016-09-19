@@ -29,7 +29,7 @@
     <br/>
     <br/>
     <!--This clears language selection from above -->
-    <i ng-click="languageFilter = {}" class="fa fa-code main-lang-logos" aria-hidden="true"></i>
+    <i ng-click="languageFilter = {}" class="fa main-lang-logos" aria-hidden="true">&lt;/reset&gt;</i>
   </div>
 
 <!-- they have some inline styling here - not sure what it overrides -->
@@ -59,7 +59,7 @@
 
 </div>
 
-{{ users }}
+<!-- {{ users }} -->
 <center>
  <div id="resource_list_container">
     <div class="resource_item" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search" ng-show="{{ post.likes - post.dislikes > -3 }} && !post.minimized">
