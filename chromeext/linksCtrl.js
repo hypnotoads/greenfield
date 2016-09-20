@@ -61,12 +61,7 @@ app.controller('linksCtrl',['$scope','links','checkUser', ($scope, links, checkU
       dislikes: $scope.posts.dislikes || 0,
       date_added: new Date().toISOString().slice(0, 19).replace('T', ' ') //Generates a current time stamp in MySql DATETIME database format
     });
-    $scope.title='';
-    $scope.description = '';
-    $scope.link = '';
-    $scope.data.topic = null;
-    $scope.data.type = null;
-    $scope.data.name = null;
+    window.close();
   };
 
   $scope.data = {

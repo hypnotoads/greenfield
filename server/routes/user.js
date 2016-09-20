@@ -101,7 +101,6 @@ module.exports.deleteOne = (req, res)=>{
 
 //LOGOUT ROUTE
 module.exports.logout = (req, res)=>{
-  req.session = undefined;
   req.session.destroy();
   res.status(200).send("request processed");
   };
