@@ -12,6 +12,7 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
   $scope.comments = links.comments;
   $scope.users = links.users;
   $scope.userReputation = links.userReputation;
+  $scope.bookmarks = links.bookmarks;
   $scope.sortType = 'date_added';
   $scope.sortReverse = false;
   $scope.searchFinish = '';
@@ -50,8 +51,11 @@ app.controller('homeCtrl',['$scope','links','checkUser',($scope, links, checkUse
     links.addOneComment(newComment)
   }
 
-  $scope.showComments = function () {
-
+  $scope.addBookmark = function (id) {
+    links.saveOne({
+      resource: id,
+      user: $scope.user.id
+    })
   }
 
   $scope.emailLink = function (id, name, email) {

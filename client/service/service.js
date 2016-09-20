@@ -6,7 +6,8 @@ app.factory('links', ['$http', ($http) => {
     languages: [],
     comments: [],
     users: [],
-    userReputation: {}
+    userReputation: {},
+    bookmarks: []
   };
 
   n.getAll = function() {
@@ -104,6 +105,21 @@ app.factory('links', ['$http', ($http) => {
         n.getAll();
       });
   };
+
+  n.getAllSaved = function() {
+    return $http.get('/bookmarks')
+      .success(function(data) {
+      angular.copy(data, n.bookmarks);
+      });
+  };
+
+  n.saveOne = function (post) {
+    return $http.post('/bookmarks', post)
+      .success(function(data) {
+        n.bookmarks.push(data);
+        n.getAllSaved();
+      });
+  }
   return n;
 
 }]);

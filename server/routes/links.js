@@ -61,8 +61,8 @@ module.exports.resourses = {
   },
 
   saveOne: (req, res)=>{
-    Links.saveOne((err, data)=>{
-      if (err) console.log(err);
+    Links.saveOne(req.body, (err,data)=>{
+      if(err) console.log(err);
       res.json(data);
     });
   },

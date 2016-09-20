@@ -54,26 +54,23 @@ let Links = {
        id_sub_topic, id_resource_type,\
        link, date_added, keywords,\
        likes, dislikes) value (?, ?,?, ?, ?, ?, NOW(), ?, ?, ?)';
-    db.query(query, data, (err, results) => callback(err, results) );
+    db.query(query, data, (err, results)=>callback(err, results));
   },
 
 
   // ****SAVE A RESOURCE (to a user)**** //
   saveOne: (params, callback) =>{
-
    let data = [params.user, params.resource];
-
-  const query = 'INSERT INTO saved_links(id_users, id_resources\
-    ) value (?, ?)';
-    db.query(query, data, (err, results) => callback(err, results) );
+    const query = 'INSERT INTO saved_links(id_users, id_resources) value (?, ?)';
+    db.query(query, data, (err, results)=>callback(err, results));
   },
 
-  getAllSaved: (params, callback) =>{
+  getAllSaved: (callback) =>{
     const query = 'SELECT s.id, s.id_users, s.id_resources,\
     r.title, r.link, r.keywords, r.id_languages \
     FROM saved_links s\
     JOIN users u ON u.id = s.id_users \
-    JOIN resources r ON r.id = r.id_resources \
+    JOIN resources r ON r.id = s.id_resources \
     ORDER BY date_added DESC';
     db.query(query, (err, results) => callback(err, results) );
   },
