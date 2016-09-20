@@ -61,7 +61,7 @@
     <div class="resource_item" ng-repeat="post in posts | orderBy: sortType:sortReverse | filter: languageFilter | filter:topicFilter | filter:search" ng-show="{{ post.likes - post.dislikes > -3 }} && !post.minimized">
       <i class="fa fa-minus-circle" aria-hidden="true" ng-click="post.minimized = true"></i>
       <i class="fa fa-trash-o" aria-hidden="true" ng-click="deletePost(post)" ng-show="user.id === post.id_users"></i>
-      <i class="fa fa-bookmark-o" aria-hidden="true" ng-click="addBookmark(post.id); post.saved = true" ng-show="!post.saved"></i>
+      <i class="fa fa-bookmark-o" aria-hidden="true" ng-click="post.saved = true" ng-show="!post.saved"></i>
       <i class="fa fa-bookmark" aria-hidden="true" ng-show="post.saved"></i>
       <a ng-href={{post.link}} target="_blank">  <!-- clicking on anything besides like or dislikes will lead you to the page -->
 
